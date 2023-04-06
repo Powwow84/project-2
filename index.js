@@ -9,7 +9,7 @@ app.use(express.urlencoded({extended: false}))
 app.use('/users', require('./controllers/users.js'))
 
 app.get('/', (req, res)=> {
-    res.send('welcome to the auth api')
+    res.render('index.ejs')
 })
 
 app.listen(PORT, ()=> {
