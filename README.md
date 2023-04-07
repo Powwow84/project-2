@@ -2,12 +2,12 @@
 ------------------------------------------------------------------------
 ## Welcome to Fin🐳da 
 
-Finda is a social media app for fisherpeople. Built by fisherpeople for fisher people. Share, View, Post, Like content of awesome times out there on the water.
+Finda is a social media app for fisher-people. Built by fisher-people for fisher-people. Share, View, Post, Like content of awesome times out there on the water.
 
 ------------------------------------------------------------------------
 ## Concept
 
-The idea of Finda is a social media app targeted at people who like to fish. Users can
+The idea of Finda is a social media app targeted at people who like to fish. Users can:
 
 * Look for examples of fish species
 * Search for different types of fish
@@ -23,8 +23,8 @@ Fish species api https://rapidapi.com/myapos--FqlEzvrlv/api/fish-species/
 
 Uses:
 
-* Consume the data from this api to prepopulate the finishes table
-* fish id’s, images, maybe wiki links
+* Consume the data from this api to prepopulate the fish table
+* Fish id’s, images, maybe wiki links
 
 api img 
 
