@@ -1,35 +1,88 @@
 const express = require('express')
 const router = express.Router()
+const db = require('../models')
+const bcrypt = require('bcrypt')
+const cryptoJs = require('crypto-js')
 
 router.get('/new', (req, res) => {
     res.render('users/new.ejs')
 })
 
 
-router.post('/', (req, res) => {
-    console.log(req.body)
+router.post('/', async (req, res) => {
+    try {
+        console.log(req.body)
+        const [newUser, created] = await db.user.findOrCreate({
+            where: {
+                email: req.body.email
+            }
+        })
+
+        if(!created) {
+            console.log('user account exists')
+            res.redirect('/users/login?message=Please login to your accoount to continue')
+        } else {
+            const hashedPassed = bcrypt.hashSync(req.body.password, 12)
+            newUser.password = hashedPassed
+            await newUser.save()
+            const encryptedPk = cryptoJs.AES.encrypt(newUser.id.toString(), process.env.ENC_KEY)
+            res.cookie('userId', encryptedPk.toString())
+            res.redirect('/users/profile')
+        }
+
+    } catch(err) {
+        console.log(err)
+        res.redirect('/')
+    }
     
-
-
-
-    res.send('create a new user if they do not exist already in the db, log a user in')
 })
 
-router.get('/', (req, res) => {
-    res.send('show a form that lets the user log in')
+router.get('/login', (req, res) => {
+    console.log(req.query)
+    res.render('users/login.ejs', {
+        message: req.query.message ? req.query.message : null
+    })
 })
 
-router.post('/login', (req, res) => {
-    res.send('verify credentials that are given by the user to log in')
+router.post('/login', async (req, res) => {
+    try {
+        const foundUser = await db.user.findOne({
+            where: {
+                email: req.body.email
+            }
+        })
+        const failedLoginMessage = 'Incorrect email or password'
+        if(!foundUser) {
+            console.log('user not found')
+            res.redirect('users/login?message=' + failedLoginMessage)
+        } else if (!bcrypt.compareSync(req.body.password, foundUser.password)){
+            console.log('incrroect password')
+            res.redirect('/users/login?message=' +failedLoginMessage)
+        } else {
+            const encryptedPk = cryptoJs.AES.encrypt(foundUser.id.toString(), process.env.ENC_KEY)
+            res.cookie('userId', encryptedPk.toString())
+            res.redirect('/users/profile')
+        }
+    }catch(err) {
+        console.log(err)
+        res.redirect('/')
+    }
+    
 })
 
 router.get('/logout', (req, res)=> {
-    res.send('log a user out')
+    console.log('logging user out')
+    res.clearCookie('userId')
+    res.redirect('/')
 })
 
 
 router.get('/profile', (req, res) =>{
-    res.send('show the currently logged in user their personal profile page')
+    if(!res.locals.user) {
+    res.redirect('/users/login?message="Your are not authorized to view that page. Please authenticate to continue')
+    } else {
+        res.render('users/profiles.ejs')
+    }
 })
 
 

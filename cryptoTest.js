@@ -17,7 +17,7 @@
 // console.log(hashedPassword)
 // console.log(bcrypt.compareSync('nope', hashedPassword))
 
-const cryptoJs = require('crypto-js')
+// const cryptoJs = require('crypto-js')
 
 const stringToEncrypt = 'hello i am a secret message'
 const encryptionKey = 'myKey'
