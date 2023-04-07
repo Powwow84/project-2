@@ -78,20 +78,22 @@ Use: Mark a location on the map where the fish was caught
 * Create and populate a screen that displays the users catches
 * Create and populate a screen that displays other users catches
 * Create and display a screen that displays catches by fish id/name
-* Be able to see other users catches
 * Be able to see all catches of a specific type of fish
 * User can create a post with fish name, image, and description/size/length
 * User can update the description of their specific post
-* User can 
+* User can delete thier post
+* User can see a list of all fish in data table
+* User can search for a specific fish
 
 -------------------------------------------------------------------------
 ## Stretch Goals
-
+* upload images using the cloudinary api 
+* Add to a fishing bucket list
+* Remove from a fishing bucket list
  
 
 ## Super Stretch Goals
-
-
+* Add catch locations using google api
 
 --------------------------------------------------------------------------
 ## Potential roadblocks
