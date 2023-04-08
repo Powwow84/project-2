@@ -41,6 +41,8 @@ app.get('/', (req, res)=> {
 })
 
 app.use('/users', require('./controllers/users.js'))
+app.use('/fish', require('./controllers/fish.js'))
+app.use('/catches', require('./controllers/catches.js'))
 
 
 
