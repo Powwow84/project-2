@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const cookieParser =require('cookie-parser')
 const cryptoJs = require('crypto-js')
+const axios = require('axios')
 const db = require('./models')
 
 const app = express()
@@ -40,6 +41,8 @@ app.get('/', (req, res)=> {
 })
 
 app.use('/users', require('./controllers/users.js'))
+
+
 
 
 app.listen(PORT, ()=> {
