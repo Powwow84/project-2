@@ -54,7 +54,7 @@ router.post('/login', async (req, res) => {
         const failedLoginMessage = 'Incorrect email or password'
         if(!foundUser) {
             console.log('user not found')
-            res.redirect('users/login?message=' + failedLoginMessage)
+            res.redirect('/users/login?message=' + failedLoginMessage)
         } else if (!bcrypt.compareSync(req.body.password, foundUser.password)){
             console.log('incrroect password')
             res.redirect('/users/login?message=' +failedLoginMessage)
