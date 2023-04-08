@@ -1,5 +1,3 @@
-const express = require('express')
-const app = express()
 const axios = require('axios')
 
 const options = {
@@ -11,17 +9,13 @@ const options = {
     }
   };
 
- 
-  
-  app.get('/', (req, res) => {
   axios.request(options)
   .then(function (response) {
     let fish = response.data
-      console.log(response.data)
       console.log(fish[0])
 
   })
   .catch(function (error) {
       console.error(error);
   });
-  })
+  
