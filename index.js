@@ -36,10 +36,14 @@ app.use(async (req,res, next) => {
     }
 })
 
-app.get('/', (req, res)=> {
+app.get('/', async(req, res)=> {
     console.log(res.locals)
-    res.render('index.ejs')
+    const bags = await db.user_fish.findAll()
+    res.render('index.ejs', {
+        bags:bags,
+    })
 })
+
 
 app.use('/users', require('./controllers/users.js'))
 app.use('/fish', require('./controllers/fish.js'))

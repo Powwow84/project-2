@@ -32,11 +32,11 @@ const db = require('./models')
 db.user_fish.create({
     userId: 2,
     fishId: 1,
-    catch_name: "huge tuna", 
+    title: "huge tuna", 
     length: 10,
     weight: 10,
     description: "it was an awesome",
-    img: 'https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_1920,f_auto/DCTM_Penguin_UK_DK_AL644648_p7nd0z.jpg',
+    img: 'https://www.thefisherman.com/wp-content/uploads/2021/05/NOAA-NEWS.jpg',
     location: "Mauritius"
   }).then(_catch => {
     console.log(_catch);
