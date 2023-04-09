@@ -17,7 +17,7 @@ router.get('/show', async (req, res) => {
     const fish = await db.fish.findAll({
       where: {
         name: {
-          [Op.like]: `%${req.query.fishSearch}%`
+          [Op.iLike]: `%${req.query.fishSearch}%`
         }
       }
     });

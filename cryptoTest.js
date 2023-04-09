@@ -29,7 +29,7 @@
 const axios = require("axios")
 const db = require('./models')
 
-db.bagged.create({
+db.user_fish.create({
     userId: 2,
     fishId: 1,
     catch_name: "huge tuna", 
