@@ -2,7 +2,7 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('_catches', {
+    await queryInterface.createTable('baggeds', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -15,10 +15,7 @@ module.exports = {
       fishId: {
         type: Sequelize.INTEGER
       },
-      locationId: {
-        type: Sequelize.INTEGER
-      },
-      catch_name: {
+      title: {
         type: Sequelize.TEXT
       },
       length: {
@@ -33,6 +30,9 @@ module.exports = {
       img: {
         type: Sequelize.TEXT
       },
+      location: {
+        type: Sequelize.TEXT
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
@@ -44,6 +44,6 @@ module.exports = {
     });
   },
   async down(queryInterface, Sequelize) {
-    await queryInterface.dropTable('_catches');
+    await queryInterface.dropTable('baggeds');
   }
 };
