@@ -4,22 +4,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="../public/styles.css" rel="'stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
     <title>User Auth</title>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="/">Home</a></li>
-
-            <% if(user) { %>
-            <li><a href="/fish/fish">Finda Fish</a></li>  
-            <li><a href="/users/profile">Profile</a></li>
-            <li><a href="/users/logout">Logout</a></li>
-            <% } else { %>
-            <li><a href="/users/new">Sign Up</a></li>
-            <li><a href="/users/login">Sign In</a></li>
-            <% } %>
-        </ul>
+    <nav class="nav">
+        <div>
+            <a href="/"><img src="https://i.imgur.com/IniAC5v.png" class="logo"></a>
+        </div>
+        <div>
+            <ul>
+                <% if(user) { %>
+                <li><a href="/fish/fish">Finda Fish</a></li>  
+                <li><a href="/users/profile">Profile</a></li>
+                <li><a href="/users/logout">Logout</a></li>
+                <% } else { %>
+                <li><a href="/users/new">Sign Up</a></li>
+                <li><a href="/users/login">Sign In</a></li>
+                <% } %>
+            </ul>
+        </div>
     </nav>
     

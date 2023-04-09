@@ -1,0 +1,29 @@
+body {
+    margin: 0
+}
+
+.nav {
+    background-color:#2B3990;
+    display: flex;
+    margin: 0;
+    border-bottom: solid .1rem #00171F;
+}
+
+.logo {
+    height:5rem;
+}
+.backgrounds {
+    background-color:#FFFFFF;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tile {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: auto;
+    margin: 3rem;
+    border: solid .1rem #00171F
+
+}

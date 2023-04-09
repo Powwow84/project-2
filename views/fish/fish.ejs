@@ -1,9 +1,20 @@
 <%- include('../partials/header.ejs' , {user:user} ) %>
 
-<h1><%=fish[1].name%></h1>
-<img src="<%=fish[1].img%>"/>
-<p><a href="<%=fish[1].wiki%>" target="blank"><%=fish[1].name %> Wiki</a></p>
+<form action="GET" action="/fish">
+    <input id="search" name="fishSearch" typew="text" placeholder="Search a fish name">
+    <button type="submit">Search</button>
+</form>
 
+<div class="backgrounds">
+    <%for (const species of fish ) { %>
+        
+        <div class="tile">
+            <h1><%=species.name%></h1>
+            <img src="<%=species.img%>"/>
+            <p><a href="<%=species.wiki%>" target="blank"><%=species.name %> Wiki</a></p>
+        </div>
+    <% } %>
 
+</div>
+    <%- include('../partials/footer.ejs') %>
 
-<%- include('../partials/footer.ejs') %>
