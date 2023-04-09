@@ -1,5 +1,14 @@
 <%- include('../partials/header.ejs' , {user:user} ) %>
 
-<h1>you made it to the finda a fish screen</h1>
-<%console.log(species) %>
-<%- include('../partials/footer.ejs') %>
+<div class="backgrounds">
+    <%for (const species of fish ) { %>
+        
+        <div class="tile">
+            <h1><%=species.name%></h1>
+            <img src="<%=species.img%>"/>
+            <p><a href="<%=species.wiki%>" target="blank"><%=species.name %> Wiki</a></p>
+        </div>
+    <% } %>
+
+</div>
+    <%- include('../partials/footer.ejs') %>
