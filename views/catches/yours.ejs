@@ -14,7 +14,7 @@
             <img src="<%=post.img%>"/>
             <p>Description: <%=post.description%></p>
             <a href="/catches/edit/<%=post.id%>">Edit Post</a>
-            <form method="POST" action="/catches/remove/<%=post.id%>">
+            <form method="POST" action="/catches/remove/<%=post.id%>/?_method=DELETE">
                 <button type="submit">Delete Post</button>
               </form>
         </div>

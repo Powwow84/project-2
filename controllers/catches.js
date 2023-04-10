@@ -52,7 +52,7 @@ router.post('/add', async (req, res) => {
   }
 });
 
-router.post('/remove/:id', async (req, res) => {
+router.delete('/remove/:id', async (req, res) => {
   try {
     await db.user_fish.destroy({ where: { id: req.params.id } });
     res.redirect('/catches/yours');

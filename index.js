@@ -4,6 +4,7 @@ const cookieParser =require('cookie-parser')
 const cryptoJs = require('crypto-js')
 const axios = require('axios')
 const db = require('./models')
+const methodOverride = require('method-override')
 
 const app = express()
 const PORT = process.env.PORT || 8000
@@ -11,6 +12,7 @@ app.set('view engine', 'ejs')
 
 app.use(express.static(__dirname + '/public/'))
 app.use(express.urlencoded({extended: false}))
+app.use(methodOverride('_method'))
 app.use(cookieParser())
 app.use((req, res, next) => {
     console.log(`${new Date().toLocaleString()} ${req.url}`)
