@@ -12,7 +12,7 @@ router.get('/', async(req, res) => {
 
 
 
-router.get('/show', async (req, res) => {
+router.get('/search', async (req, res) => {
   try {
     const fish = await db.fish.findAll({
       where: {
@@ -21,7 +21,7 @@ router.get('/show', async (req, res) => {
         }
       }
     });
-    res.render('fish/show.ejs', {
+    res.render('fish/search.ejs', {
       fish: fish
     });
   } catch (err) {
