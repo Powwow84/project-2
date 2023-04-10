@@ -1,6 +1,11 @@
 <%- include("../partials/header.ejs", {user:user}) %>
 
 <h1> you made it to your catches </h1>
+<p>Add a new catch by searching for the fish</p>
+<form method="GET" action="/fish/show">
+    <input id="search" name="fishSearch" type="text" placeholder="Search a fish name">
+    <button type="submit">Search</button>
+</form>
 
 <div class="backgrounds">
     <%for (const post of bags ) { %>

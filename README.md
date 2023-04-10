@@ -108,9 +108,6 @@ Use: Mark a location on the map where the fish was caught
 * Consume fishdata api and seed fish data table
 * Create and populate a screen that displays all fish catchs from all users
 * Create and populate a screen that displays the users catches
-* Create and populate a screen that displays other users catches
-* Create and display a screen that displays catches by fish id/name
-* Be able to see all catches of a specific type of fish
 * User can create a post with fish name, image, and description/size/length
 * User can update the description of their specific post
 * User can delete thier post
@@ -119,6 +116,8 @@ Use: Mark a location on the map where the fish was caught
 
 -------------------------------------------------------------------------
 ## Stretch Goals
+* Create and populate a screen that displays other users catches
+* Create and display a screen that displays catches by fish id/name
 * upload images using the cloudinary api 
 * Add to a fishing bucket list
 * Remove from a fishing bucket list
