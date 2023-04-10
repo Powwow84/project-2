@@ -15,8 +15,18 @@ router.get("/add", async (req, res) => {
 
 router.post('/add', async (req, res) => {
     try {
-    //   const catchData = req.body;
-    //   const newCatch = await db.bagged.create(catchData);
+      const catchData = req.body;
+      console.log(catchData)
+      await db.user_fish.create({
+        userId: req.body.userId,
+        fishId: req.body.fishId,
+        title: req.body.title,
+        length: req.body.length,
+        weight: req.body.weight,
+        img: req.body.img,
+        location: req.body.location,
+        description: req.body.description
+      })
       res.render('catches/yours');
     } catch (err) {
       console.log('Oops That didnt work');
