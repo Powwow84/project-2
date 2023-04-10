@@ -61,4 +61,23 @@ router.delete('/remove/:id', async (req, res) => {
   }
 });
 
+router.put('/edit/:id', async (req, res) => {
+  try {
+    await db.user_fish.update({
+      userId: req.body.userId,
+        fishId: req.body.fishId,
+        title: req.body.title,
+        length: req.body.length,
+        weight: req.body.weight,
+        img: req.body.img,
+        location: req.body.location,
+        description: req.body.description
+    }, { 
+      where: { id: req.params.id } });
+    res.redirect('/catches/yours');
+  } catch (err) {
+    console.log("Oops, that didn't work");
+  }
+});
+
 module.exports = router
