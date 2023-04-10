@@ -36,7 +36,8 @@ router.post('/add', async (req, res) => {
         location: req.body.location,
         description: req.body.description
       })
-    res.render("catches/yours.ejs");
+      const bags = await db.user_fish.findAll()
+      res.render("catches/yours.ejs", {bags: bags});
     } catch (err) {
       console.log('Oops That didnt work');
     }
