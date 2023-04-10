@@ -43,6 +43,22 @@ router.post('/add', async (req, res) => {
     }
   })
 
+  router.get('/edit/:id', async (req, res) => {
+  try {
+    const userPost = await db.user_fish.findByPk(req.params.id);
+    res.render('catches/edit', { userPost: userPost });
+  } catch (err) {
+    console.log("oops that didn't work");
+  }
+});
 
+router.post('/remove/:id', async (req, res) => {
+  try {
+    await db.user_fish.destroy({ where: { id: req.params.id } });
+    res.redirect('/catches/yours');
+  } catch (err) {
+    console.log("Oops, that didn't work");
+  }
+});
 
 module.exports = router

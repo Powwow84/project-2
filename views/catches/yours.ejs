@@ -13,6 +13,10 @@
             <p><%=post.length%></p>
             <img src="<%=post.img%>"/>
             <p>Description: <%=post.description%></p>
+            <a href="/catches/edit/<%=post.id%>">Edit Post</a>
+            <form method="POST" action="/catches/remove/<%=post.id%>">
+                <button type="submit">Delete Post</button>
+              </form>
         </div>
         <%} %>
     <% } %>
