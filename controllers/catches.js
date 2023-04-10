@@ -2,6 +2,15 @@ const express = require('express')
 const router = express.Router()
 const db = require('../models')
 
+router.get('/yours', async(req, res) => {
+    try {
+        const bags = await db.user_fish.findAll()
+        res.render("catches/yours.ejs", {bags: bags});
+    } catch(err) {
+        console.log("Opps that didnt work")
+    }
+})
+
 router.get("/add", async (req, res) => {
     try {
         const speciesId = req.query.speciesId;
@@ -27,7 +36,7 @@ router.post('/add', async (req, res) => {
         location: req.body.location,
         description: req.body.description
       })
-      res.render('catches/yours');
+    res.render("catches/yours.ejs");
     } catch (err) {
       console.log('Oops That didnt work');
     }

@@ -2,4 +2,21 @@
 
 <h1> you made it to your catches </h1>
 
+<div class="backgrounds">
+    <%for (const post of bags ) { %>
+      <% if(post.userId === user.id) { %>
+        <div class="tile">
+            <h1><%=post.title%></h1>
+            <p><%=post.userId%></p>
+            <p><%=post.location%></p>   
+            <p><%=post.weight%></p>
+            <p><%=post.length%></p>
+            <img src="<%=post.img%>"/>
+            <p>Description: <%=post.description%></p>
+        </div>
+        <%} %>
+    <% } %>
+
+</div>
+
 <%- include("../partials/footer.ejs") %>
