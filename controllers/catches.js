@@ -13,7 +13,15 @@ router.get("/add", async (req, res) => {
     }
 })
 
-
+router.post('/add', async (req, res) => {
+    try {
+    //   const catchData = req.body;
+    //   const newCatch = await db.bagged.create(catchData);
+      res.render('catches/yours');
+    } catch (err) {
+      console.log('Oops That didnt work');
+    }
+  })
 
 
 
