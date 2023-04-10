@@ -3,8 +3,8 @@
 <h1>You're adding an <%=species.name%> to your catches</h1>
 
 <form method="POST" action="/catches/add">
-    <input id="userId" type="integer" name="userId" value="<%=user.id%>">
-    <input id="fishId" type="integer" name="fishId" value="<%=species.id%>">
+    <input hidden id="userId" type="integer" name="userId" value="<%=user.id%>">
+    <input hidden id="fishId" type="integer" name="fishId" value="<%=species.id%>">
     <input id="title" type="text" name="title" placeholder="Title of you post">
     <input id="length" type="integer" name="length" placeholder="Legnth in inches">
     <input id="weight" type="integer" name="weight" placeholder="Weight in pounds">
