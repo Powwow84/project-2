@@ -1,29 +1,112 @@
 body {
-    margin: 0
+    margin: 0;
+    font-family: "Roboto";
+    font-size: 1rem;
 }
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    size: 90%;
+}
+
+h1 {
+    color: #2B3990;
+}
+
+
+/* css for nav bar */
 
 .nav {
     background-color:#2B3990;
     display: flex;
+    align-items: center;
     margin: 0;
     border-bottom: solid .1rem #00171F;
+    max-height: 7rem;
+}
+
+.logoContainer {
+    display: flex;
+    align-content:center;
+    width:50%;
+    margin-left: 3rem;
 }
 
 .logo {
-    height:5rem;
+    position: relative;
+    top:.30rem;
+    max-height:6rem;
 }
+
+.linksContainer {
+    display: flex;
+    align-content:center;
+    justify-content: flex-end;
+    width:50%;
+    margin-right: 3rem;
+}
+.navLinks {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+.navLinks a {
+    margin: .5rem;
+    color: white;
+}
+
+
+/* CSS for the search bar */
+
+.searchBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1rem;
+}
+
+.searchBar button {
+    height: 1.9rem;
+    margin: 0
+}
+
+.searchBar input {
+    height: 1.5rem;
+    width: 21rem;
+    margin:0;
+}
+
+/* css for the main content */
+
 .backgrounds {
-    background-color:#FFFFFF;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .tile {
     display: flex;
     flex-direction: column;
-    width: 25%;
+    width: 25rem;
     height: auto;
     margin: 3rem;
     border: solid .1rem #00171F
+
+}
+
+
+
+
+@media screen and (max-width:53rem) {
+    .navLinks {
+        flex-direction: column;
+        font-size: 1rem;
+    }
 
 }

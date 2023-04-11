@@ -1,11 +1,15 @@
 <%- include('../partials/header.ejs' , {user:user} ) %>
 
-<form method="GET" action="/fish/search">
-    <input id="search" name="fishSearch" type="text" placeholder="Search a fish name">
-    <button type="submit">Search</button>
-</form>
+<div class="searchBar">
+    <h1>Welcom to the fish Index</h1>
+    <form method="GET" action="/fish/search">
+        <input id="search" name="fishSearch" type="text" placeholder="Search for a fish">
+        <button type="submit">Search</button>
+    </form>
+</div>
 
 <div class="backgrounds">
+
     <%for (const species of fish ) { %>
         
         <div class="tile">
