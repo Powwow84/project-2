@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
             await newUser.save()
             const encryptedPk = cryptoJs.AES.encrypt(newUser.id.toString(), process.env.ENC_KEY)
             res.cookie('userId', encryptedPk.toString())
-            res.redirect('/users/profile')
+            res.redirect('/')
         }
 
     } catch(err) {
@@ -61,7 +61,7 @@ router.post('/login', async (req, res) => {
         } else {
             const encryptedPk = cryptoJs.AES.encrypt(foundUser.id.toString(), process.env.ENC_KEY)
             res.cookie('userId', encryptedPk.toString())
-            res.redirect('/users/profile')
+            res.redirect('/')
         }
     }catch(err) {
         console.log(err)

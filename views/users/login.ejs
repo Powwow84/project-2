@@ -1,18 +1,22 @@
 <%- include("../partials/header.ejs", {user: user} ) %>
 
-<h2>Sign in to your account!</h2>
+<div class="tileForm">
+    <h2>Sign into your account!</h2>
 
-<% if(message) { %>
-    <p><%= message %></p>
-<%} %>
+    <% if(message) { %>
+        <p class="loginError"><%= message %></p>
+    <%} %>
 
-<form method="POST" action="/users/login">
-    <lable for="email">Email:</lable>
-    <input type="'email" name="email" id="email" required/>
-    <lable for="password">password:</lable>
-    <input type="password" name="password" id="password" required/>
-    <button type="submit">Login</button>
-</form>
+    <form method="POST" action="/users/login" class="entryForm">
+        <lable for="email">Email:</lable>
+        <input type="'email" name="email" id="email" required/>
+        <lable for="password">password:</lable>
+        <input type="password" name="password" id="password" required/>
+        <button type="submit" class="entryButton">Login</button>
+        <a href="/users/new" class="wiki">Sign Up</a>
+    </form>
+
+</div>
 
 
 
