@@ -1,4 +1,5 @@
 body {
+    width: 100%;
     margin: 0;
     font-family: "Lato";
     font-size: 1rem;
@@ -234,10 +235,31 @@ h1 {
 
 
 
-@media screen and (max-width:53rem) {
+@media screen and (max-width: 53rem) {
     .navLinks {
         flex-direction: column;
         font-size: 1rem;
+    }
+
+}
+
+@media screen and (max-width: 25rem) {
+
+    body {
+        width: 100%;
+    }
+
+    .logoContainer {
+        margin-left: 1rem;
+    }
+
+    .linksContainer {
+        margin-right: 1rem;
+    }
+
+    .tile {
+        border: none;
+        width: 20rem;
     }
 
 }
