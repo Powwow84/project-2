@@ -1,11 +1,13 @@
 
 <%- include("../partials/header.ejs", {user: user} ) %>
 
-<form method="GET" action="/fish/search">
-    <lable>Search for a fish to add to your catches</lable>
-    <input id="search" name="fishSearch" type="text" placeholder="Search a fish to add to your catches">
-    <button type="submit">Search</button>
-</form>
+<div class="searchBar">
+    <h1>This is your profile</h1>
+    <form method="GET" action="/fish/search">
+        <input id="search" name="fishSearch" type="text" placeholder="Search for a fish">
+        <button type="submit">Search</button>
+    </form>
+</div>
 
 <%- include("../partials/footer.ejs") %>
 

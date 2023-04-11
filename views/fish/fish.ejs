@@ -1,7 +1,7 @@
 <%- include('../partials/header.ejs' , {user:user} ) %>
 
 <div class="searchBar">
-    <h1>Welcom to the fish Index</h1>
+    <h1>Welcome to the fish Index</h1>
     <form method="GET" action="/fish/search">
         <input id="search" name="fishSearch" type="text" placeholder="Search for a fish">
         <button type="submit">Search</button>
@@ -13,10 +13,14 @@
     <%for (const species of fish ) { %>
         
         <div class="tile">
-            <h1><%=species.name%></h1>
+            <div class="tileHeader">
+                <h3><%=species.name%></h3>
+            </div>
             <img src="<%=species.img%>"/>
-            <p><a href="<%=species.wiki%>" target="blank"><%=species.name %> Wiki</a></p>
-            <p><a href="/catches/add?speciesId=<%=species.id%>">Add Catch</a></p>
+            <div class="tileFooter">
+                <p><a href="<%=species.wiki%>" target="blank" class="wiki"><%=species.name %> Wiki</a></p>
+                <button><a href="/catches/add?speciesId=<%=species.id%>" class="addButton">Add Catch</a></button>
+            </div>
         </div>
     <% } %>
 
