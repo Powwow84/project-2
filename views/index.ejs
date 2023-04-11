@@ -1,16 +1,24 @@
 <%- include("./partials/header.ejs", {user: user} ) %>
 
 <div class="backgrounds">
-    <%for (const post of bags ) { %>
-        
+    <%for (const post of bags ) { %> 
         <div class="tile">
-            <h1><%=post.title%></h1>
-            <p><%=post.userId%></p>
-            <p><%=post.location%></p>   
-            <p><%=post.weight%></p>
-            <p><%=post.length%></p>
-            <img src="<%=post.img%>"/>
-            <p>Description: <%=post.description%></p>
+            <div class="tileHeader">
+                <h3><%=post.title%></h3>
+                <div class="tileInfo">
+                    <p><span>Fisher:</span>  <%=post.userId%></p>
+                    <p><span>Area:</span>  <%=post.location%></p>   
+                    <p><span>Catch Weight:</span>  <%=post.weight%> pounds</p>
+                    <p><span>Catch Length:</span>  <%=post.length%> inches</p>
+                </div>
+                <div class="tileImg">
+                    <img src="<%=post.img%>"/>
+                </div>
+            </div>
+                <div class="tileFooter">
+                <p class="tag">Story</p>
+                <p><%=post.description%></p>
+            </div>
         </div>
     <% } %>
 

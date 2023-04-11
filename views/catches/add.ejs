@@ -1,21 +1,24 @@
 <%- include('../partials/header.ejs' , {user:user} ) %>
+
 <%console.log(species)%>
-<h1>You're adding an <%=species.name%> to your catches</h1>
 
-<form method="POST" action="/catches/add">
-    <input hidden id="userId" type="integer" name="userId" value="<%=user.id%>">
-    <input hidden id="fishId" type="integer" name="fishId" value="<%=species.id%>">
-    <input id="title" type="text" name="title" placeholder="Title of you post">
-    <input id="length" type="integer" name="length" placeholder="Legnth in inches">
-    <input id="weight" type="integer" name="weight" placeholder="Weight in pounds">
-    <input id="img" type="text" name="img" placeholder="url to image link">
-    <input id="location" type="text" name="location" placeholder="Area where you caught the fish">
-    <textarea id="description" type="text" name="description" cols="30" rows="10" placeholder="Weight in pounds"></textarea>
-    <button type="submit">Submit</button>
+<div class="tileForm">
 
+    <h1>You're adding an <%=species.name%> to your catches</h1>
 
-
-</form>
+    <form method="POST" action="/catches/add" class="entryForm">
+        <input hidden id="userId" type="integer" name="userId" value="<%=user.id%>">
+        <input hidden id="fishId" type="integer" name="fishId" value="<%=species.id%>">
+        <input id="title" type="text" name="title" placeholder="Title of you post">
+        <input id="length" type="integer" name="length" placeholder="Legnth in inches">
+        <input id="weight" type="integer" name="weight" placeholder="Weight in pounds">
+        <input id="img" type="text" name="img" placeholder="url to image link">
+        <input id="location" type="text" name="location" placeholder="Area where you caught the fish">
+        <textarea id="description" type="text" name="description" cols="30" rows="10" placeholder="Weight in pounds"></textarea>
+        <button type="submit" class="entryButton">Submit</button>
+    </form>
+        
+</div>
 
 
 <%- include('../partials/footer.ejs') %>

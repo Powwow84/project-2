@@ -1,15 +1,21 @@
 <%- include('../partials/header.ejs' , {user:user} ) %>
 
-<h1>Editing Post: <%= userPost.title%></h1>
 <%console.log(userPost)%>
 
-<form method="POST" action="/catches/edit/<%=userPost.id%>?_method=PUT">
-    <input id="title" type="text" name="title" value="<%=userPost.title%>">
-    <input id="length" type="integer" name="length" value="<%=userPost.length%>">
-    <input id="weight" type="integer" name="weight" value="<%=userPost.weight%>">
-    <input id="img" type="text" name="img" value="<%=userPost.img%>">
-    <input id="location" type="text" name="location" value="<%=userPost.location%>">
-    <textarea id="description" type="text" name="description" cols="30" rows="10" placeholder="Enter your fish tale here"></textarea>
-    <button type="submit">Submit</button>
+<div class="tileForm">
+    <h1>Editing Catch Titled:</h1>
+    <h2><%= userPost.title%></h2>
+
+    <form method="POST" action="/catches/edit/<%=userPost.id%>?_method=PUT" class="entryForm">
+        <input id="title" type="text" name="title" value="<%=userPost.title%>">
+        <input id="length" type="integer" name="length" value="<%=userPost.length%>">
+        <input id="weight" type="integer" name="weight" value="<%=userPost.weight%>">
+        <input id="img" type="text" name="img" value="<%=userPost.img%>">
+        <input id="location" type="text" name="location" value="<%=userPost.location%>">
+        <textarea id="description" type="text" name="description" cols="30" rows="10" placeholder="Enter your fish tale here"></textarea>
+        <button type="submit" class="entryButton">Submit</button>
+    </form>
+
+</div>
 
 <%- include('../partials/footer.ejs') %>

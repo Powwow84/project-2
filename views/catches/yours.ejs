@@ -1,11 +1,9 @@
 <%- include("../partials/header.ejs", {user:user}) %>
 
-<h1> you made it to your catches </h1>
-<p>Add a new catch by searching for the fish</p>
 <div class="searchBar">
-    <h1>Welcom to the fish Index</h1>
+    <h1>Here's the fish you caught</h1>
     <form method="GET" action="/fish/search">
-        <input id="search" name="fishSearch" type="text" placeholder="Search for a fish">
+        <input id="search" name="fishSearch" type="text" placeholder="Add a new catch by searching for a fish">
         <button type="submit">Search</button>
     </form>
 </div>
@@ -14,17 +12,26 @@
     <%for (const post of bags ) { %>
       <% if(post.userId === user.id) { %>
         <div class="tile">
-            <h1><%=post.title%></h1>
-            <p><%=post.userId%></p>
-            <p><%=post.location%></p>   
-            <p><%=post.weight%></p>
-            <p><%=post.length%></p>
-            <img src="<%=post.img%>"/>
-            <p>Description: <%=post.description%></p>
-            <a href="/catches/edit/<%=post.id%>">Edit Post</a>
-            <form method="POST" action="/catches/remove/<%=post.id%>/?_method=DELETE">
-                <button type="submit">Delete Post</button>
-            </form>
+            <div class="tileHeader">
+                <h3><%=post.title%></h3>
+                <div class="tileInfo">
+                    <p><span>Fisher:</span>  <%=post.userId%></p>
+                    <p><span>Area:</span>  <%=post.location%></p>   
+                    <p><span>Catch Weight:</span>  <%=post.weight%> pounds</p>
+                    <p><span>Catch Length:</span>  <%=post.length%> inches</p>
+                </div>
+                <div class="tileImg">
+                    <img src="<%=post.img%>"/>
+                </div>
+            </div>
+            <div class="tileFooter">
+                <p class="tag">Story</p>
+                <p><%=post.description%></p>
+                <a href="/catches/edit/<%=post.id%>" class="wiki">Edit Post</a>
+                <form method="POST" action="/catches/remove/<%=post.id%>/?_method=DELETE">
+                    <button type="submit" class="addButton">Delete Post</button>
+                </form>
+            </div>
         </div>
         <%} %>
     <% } %>
