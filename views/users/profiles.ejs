@@ -1,6 +1,8 @@
 
 <%- include("../partials/header.ejs", {user: user} ) %>
 
+<%console.log(user)%>
+
 <div class="searchBar">
     <h1>This is your profile</h1>
     <form method="GET" action="/fish/search">
@@ -8,6 +10,11 @@
         <button type="submit">Search</button>
     </form>
 </div>
+
+<p><%=user.user_name%></p>
+<img src="<%=user.user_img%>" />
+<p><%=user.description%></p>
+<a href="/users/edit/<%=user.id%>">Edit Profile</a>
 
 <%- include("../partials/footer.ejs") %>
 

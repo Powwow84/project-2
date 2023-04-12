@@ -73,7 +73,8 @@ router.put('/edit/:id', async (req, res) => {
         location: req.body.location,
         description: req.body.description
     }, { 
-      where: { id: req.params.id } });
+      where: { id: req.params.id } 
+    });
     res.redirect('/catches/yours');
   } catch (err) {
     console.log("Oops, that didn't work");

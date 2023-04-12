@@ -29,5 +29,27 @@
 const axios = require("axios")
 const db = require('./models')
 
-await db.user_fish.destroy({ where: { id: 3 } });
-    
+// db.user_fish.create({
+//     userId: 2,
+//     fishId: 1,
+//     title: "huge tuna", 
+//     length: 10,
+//     weight: 10,
+//     description: "it was an awesome",
+//     img: 'https://www.thefisherman.com/wp-content/uploads/2021/05/NOAA-NEWS.jpg',
+//     location: "Mauritius"
+//   }).then(_catch => {
+//     console.log(_catch);
+//   }).catch(err => {
+//     console.log(err);
+//   });
+
+db.user.update({
+  user_name: "Pao"},
+  {
+    where: {id : 3}
+  }).then(_catch => {
+      console.log(_catch);
+    }).catch(err => {
+      console.log(err);
+    });

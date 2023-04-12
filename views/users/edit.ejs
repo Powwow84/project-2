@@ -1,0 +1,15 @@
+<%- include('../partials/header.ejs' , {user:user}) %>
+
+<h1>you made it to the edit page</h1>
+
+<img src="<%=user.user_img%>" />
+
+<form method="POST" action="/users/edit/<%=user.id%>?_method=PUT" >
+    <input type="hidden" role="uploadcare-uploader" name="my_file"/>
+    <input id="username" type="string" name="user_name" value="<%=user.user_name%>" />
+    <input hidden id="user_img" type="text" name="user_img" value="<%=user.user_img%>" />
+    <textarea id="description" type="text" name="description" cols="30" rows="10" placeholder="Description: Say Anything!"></textarea>
+    <button type="submit">Submit</button>
+</form>
+
+<%- include('../partials/footer.ejs') %>

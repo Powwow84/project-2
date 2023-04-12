@@ -86,6 +86,26 @@ router.get('/profile', (req, res) =>{
     }
 })
 
+router.get('/edit/:id', (req,res) => {
+    res.render('users/edit.ejs')
+})
+
+router.put('/edit/:id', async (req,res) => {
+    try{
+        await db.user.update({
+            user_name: req.body.user_name,
+            description: req.body.description,
+            user_img: req.body.my_file,
+        },
+        {
+            where: {id: req.params.id}
+        })
+        await res.render('users/profiles');
+    }catch(err) {
+        console.log('oops that didnt work')
+    }
+});
+
 
 
 module.exports = router
