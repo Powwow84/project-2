@@ -3,6 +3,7 @@ const router = express.Router()
 const db = require('../models')
 const bcrypt = require('bcrypt')
 const cryptoJs = require('crypto-js')
+const uploadcareWidget = require("uploadcare-widget")
 
 router.get('/new', (req, res) => {
     res.render('users/new.ejs')

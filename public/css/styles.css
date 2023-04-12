@@ -231,6 +231,16 @@ h1 {
     color: red;
 }
 
+/* Upload button */
+
+.uploadSpacer {
+    margin-top: 1rem;
+}
+
+.uploadSpacerTop {
+    margin-bottom: 1rem;
+}
+
 
 
 

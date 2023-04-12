@@ -2,6 +2,8 @@ const express = require('express')
 const router = express.Router()
 const db = require('../models')
 const {Op} = require('sequelize');
+const uploadcareWidget = require("uploadcare-widget")
+
 
 router.get('/', async(req, res) => {
     const fish = await db.fish.findAll()

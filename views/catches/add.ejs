@@ -7,14 +7,15 @@
     <h1>You're adding an <%=species.name%> to your catches</h1>
 
     <form method="POST" action="/catches/add" class="entryForm">
+        <label class="uploadSpacerTop">Select a image to upload</label>
+        <input type="hidden" role="uploadcare-uploader" name="my_file"/>
         <input hidden id="userId" type="integer" name="userId" value="<%=user.id%>">
         <input hidden id="fishId" type="integer" name="fishId" value="<%=species.id%>">
-        <input id="title" type="text" name="title" placeholder="Title of you post">
+        <input id="title" type="text" name="title" placeholder="Title of you post" class="uploadSpacer">
         <input id="length" type="integer" name="length" placeholder="Legnth in inches">
         <input id="weight" type="integer" name="weight" placeholder="Weight in pounds">
-        <input id="img" type="text" name="img" placeholder="url to image link">
         <input id="location" type="text" name="location" placeholder="Area where you caught the fish">
-        <textarea id="description" type="text" name="description" cols="30" rows="10" placeholder="Weight in pounds"></textarea>
+        <textarea id="description" type="text" name="description" cols="30" rows="10" placeholder="Tell us the story about the catch"></textarea>
         <button type="submit" class="entryButton">Submit</button>
     </form>
         

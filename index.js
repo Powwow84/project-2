@@ -5,6 +5,7 @@ const cryptoJs = require('crypto-js')
 const axios = require('axios')
 const db = require('./models')
 const methodOverride = require('method-override')
+const uploadcareWidget = require("uploadcare-widget")
 
 const app = express()
 const PORT = process.env.PORT || 8000

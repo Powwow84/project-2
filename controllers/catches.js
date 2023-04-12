@@ -32,7 +32,7 @@ router.post('/add', async (req, res) => {
         title: req.body.title,
         length: req.body.length,
         weight: req.body.weight,
-        img: req.body.img,
+        img: req.body.my_file,
         location: req.body.location,
         description: req.body.description
       })
@@ -69,7 +69,7 @@ router.put('/edit/:id', async (req, res) => {
         title: req.body.title,
         length: req.body.length,
         weight: req.body.weight,
-        img: req.body.img,
+        img: req.body.my_file,
         location: req.body.location,
         description: req.body.description
     }, { 
