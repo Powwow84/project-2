@@ -4,17 +4,25 @@
 <%console.log(user)%>
 
 <div class="searchBar">
-    <h1>This is your profile</h1>
+    <h1>Welcome to your profile</h1>
     <form method="GET" action="/fish/search">
-        <input id="search" name="fishSearch" type="text" placeholder="Search for a fish">
+        <input id="search" name="fishSearch" type="text" placeholder="Search for a fish to add it to your bucket list">
         <button type="submit">Search</button>
     </form>
 </div>
+<div class="profile">
+    <div class="profileBox">
+        <p><%=user.user_name%></p>
+        <img src="<%=user.user_img%>" />
+        <p><%=user.description%></p>
+        <a href="/users/edit/<%=user.user_name%>" class="wiki">Edit Profile</a>
+        <a href="/users/logout" class="logoutButton">Logout</a>
+    </div>
+</div>
 
-<p><%=user.user_name%></p>
-<img src="<%=user.user_img%>" />
-<p><%=user.description%></p>
-<a href="/users/edit/<%=user.user_name%>">Edit Profile</a>
+<div class="bucketlist">
+    <p>Fish in your bucket list</p>
+</div>
 
 <%- include("../partials/footer.ejs") %>
 

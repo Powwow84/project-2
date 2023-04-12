@@ -61,6 +61,14 @@ h1 {
     color: white;
 }
 
+.navImg {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    align-self: center;
+    margin: 1rem;
+}
+
 
 /* CSS for the search bar */
 
@@ -241,6 +249,57 @@ h1 {
     margin-bottom: 1rem;
 }
 
+/* css for the profile screen */
+
+.profile {
+    display: flex;
+    justify-content: center;
+}
+
+.profileBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25rem;
+    border: .2rem solid #2B3990;
+    padding: 0 1rem;
+}
+
+.profile p {
+    justify-self: center;
+    color:#2B3990;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.profile img {
+    max-width: 15rem;
+    border-radius: 15%;
+}
+
+.logoutButton {
+    margin-bottom: 1rem;
+    background-color:#2B3990;
+    color:white;
+    border: none;
+    margin-top: .5rem;
+    padding: .1rem 1.5rem .3rem 1.5rem;
+}
+
+
+.bucketlist {
+    display: flex;
+    justify-content: center;
+}
+
+.bucketlist p {
+    color:#ffffff;
+    background-color: #2B3990;
+    padding: .25rem 1rem;
+    Margin: 3rem;
+    font-size: 1.1rem;
+}
+
 
 
 
@@ -249,6 +308,14 @@ h1 {
     .navLinks {
         flex-direction: column;
         font-size: 1rem;
+    }
+
+    .logoContainer {
+        margin-left: 1rem;
+    }
+
+    .linksContainer {
+        margin-right: 1rem;
     }
 
 }
