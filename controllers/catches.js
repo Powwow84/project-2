@@ -2,6 +2,13 @@ const express = require('express')
 const router = express.Router()
 const db = require('../models')
 
+router.get("/all", async(req,res) => {
+  const bags = await db.user_fish.findAll()
+    res.render('catches/all', {
+        bags:bags,
+    })
+})
+
 router.get('/yours', async(req, res) => {
     try {
         const bags = await db.user_fish.findAll()

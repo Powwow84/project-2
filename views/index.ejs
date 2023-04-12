@@ -4,29 +4,4 @@
     <h1>Welcome to Finda, share your stories and pics!</h1>
 </div>
 
-
-<div class="backgrounds">
-    <%for (const post of bags ) { %> 
-        <div class="tile">
-            <div class="tileHeader">
-                <h3><%=post.title%></h3>
-                <div class="tileInfo">
-                    <p><span>Fisher:</span>  <%=post.userId%></p>
-                    <p><span>Area:</span>  <%=post.location%></p>   
-                    <p><span>Catch Weight:</span>  <%=post.weight%> pounds</p>
-                    <p><span>Catch Length:</span>  <%=post.length%> inches</p>
-                </div>
-                <div class="tileImg">
-                    <img src="<%=post.img%>"/>
-                </div>
-            </div>
-                <div class="tileFooter">
-                <p class="tag">Story</p>
-                <p><%=post.description%></p>
-            </div>
-        </div>
-    <% } %>
-
-</div>
-
 <%- include("./partials/footer.ejs") %>

@@ -41,10 +41,7 @@ app.use(async (req,res, next) => {
 
 app.get('/', async(req, res)=> {
     console.log(res.locals)
-    const bags = await db.user_fish.findAll()
-    res.render('index.ejs', {
-        bags:bags,
-    })
+    res.render('index.ejs')
 })
 
 

@@ -62,7 +62,7 @@ router.post('/login', async (req, res) => {
         } else {
             const encryptedPk = cryptoJs.AES.encrypt(foundUser.id.toString(), process.env.ENC_KEY)
             res.cookie('userId', encryptedPk.toString())
-            res.redirect('/')
+            res.redirect('/catches/all')
         }
     }catch(err) {
         console.log(err)
