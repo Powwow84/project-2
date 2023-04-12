@@ -98,9 +98,9 @@ router.put('/edit/:id', async (req,res) => {
             user_img: req.body.my_file,
         },
         {
-            where: {id: req.params.id}
+            where: {id: req.body.id}
         })
-        await res.render('users/profiles');
+        res.redirect('/users/profile');
     }catch(err) {
         console.log('oops that didnt work')
     }

@@ -4,7 +4,8 @@
 
 <img src="<%=user.user_img%>" />
 
-<form method="POST" action="/users/edit/<%=user.id%>?_method=PUT" >
+<form method="POST" action="/users/edit/<%=user.user_name%>?_method=PUT" >
+    <input hidden id="id" type="integer" name="id" value="<%=user.id%>">
     <input type="hidden" role="uploadcare-uploader" name="my_file"/>
     <input id="username" type="string" name="user_name" value="<%=user.user_name%>" />
     <input hidden id="user_img" type="text" name="user_img" value="<%=user.user_img%>" />
