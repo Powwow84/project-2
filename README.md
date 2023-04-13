@@ -44,7 +44,7 @@ Use: Mark a location on the map where the fish was caught
 
 ## ERD
 
-![Imgur](https://i.imgur.com/UfAf8Gi.png)
+![Imgur](https://i.imgur.com/bmiw41p.png)
 
 ------------------------------------------------------------------------
 ## RESTful Routing Chart
