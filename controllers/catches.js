@@ -30,7 +30,6 @@ router.get("/add", async (req, res) => {
         res.render("catches/add.ejs", {species: species});
     } catch (err) {
         console.log(err);
-        res.send("Oops, something went wrong");
     }
 })
 

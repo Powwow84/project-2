@@ -34,8 +34,7 @@ router.post('/', async (req, res) => {
         }
 
     } catch(err) {
-        console.log(err)
-        res.redirect('/')
+        console.log("oops that didnt work")
     }
     
 })
@@ -68,7 +67,7 @@ router.post('/login', async (req, res) => {
         }
     }catch(err) {
         console.log(err)
-        res.redirect('/')
+      
     }
     
 })
@@ -104,7 +103,7 @@ router.put('/edit/:id', async (req,res) => {
         })
         res.redirect('/users/profile');
     }catch(err) {
-        console.log('oops that didnt work')
+        console.log("oops that didnt work")
     }
 });
 

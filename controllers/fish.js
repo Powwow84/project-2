@@ -6,10 +6,14 @@ const uploadcareWidget = require("uploadcare-widget")
 
 
 router.get('/', async(req, res) => {
+  try{
     const fish = await db.fish.findAll()
     res.render('fish/fish.ejs', {
         fish:fish,
     })
+  }catch(err){
+    console.log('Oops That didnt work')
+  }
 })
 
 
@@ -27,7 +31,7 @@ router.get('/search', async (req, res) => {
       fish: fish
     });
   } catch (err) {
-    console.log('Oops That didnt work');
+    console.log('Oops That didnt work')
   }
 });
 

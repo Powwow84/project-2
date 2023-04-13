@@ -39,6 +39,7 @@ app.use(async (req,res, next) => {
     }
 })
 
+
 app.get('/', async(req, res)=> {
     console.log(res.locals)
     res.render('index.ejs')
