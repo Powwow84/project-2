@@ -47,17 +47,31 @@ const db = require('./models')
 
 // this is my test JS where i use to do random task such as update my users tables
 
-db.user.update(
-  { email: "Test3@gmail" },
-  { where: { id: 3 } }
-)
-.then(numRowsAffected => {
-  if (numRowsAffected > 0) {
-    console.log("User's name updated successfully");
-  } else {
-    console.log("No rows were updated");
+// db.user.update(
+//   { email: "Test3@gmail" },
+//   { where: { id: 3 } }
+// )
+// .then(numRowsAffected => {
+//   if (numRowsAffected > 0) {
+//     console.log("User's name updated successfully");
+//   } else {
+//     console.log("No rows were updated");
+//   }
+// })
+// .catch(error => console.log(error));
+
+db.fish.findAll({
+  where: { img: null }
+}).then(fishList => {
+  for (const fish of fishList) {
+    db.fish.update({
+      img: "https://i.imgur.com/An0tyUy.jpg"
+    }, {
+      where: { id: fish.id }
+    }).catch(err => {
+      console.log(err);
+    });
   }
-})
-.catch(error => console.log(error));
+});
 
   
