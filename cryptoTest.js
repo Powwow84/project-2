@@ -45,17 +45,17 @@ const db = require('./models')
 //   });
 
 
-// db.user.update(
-//   { user_name: "Takashi Miké" },
-//   { where: { id: 6 } }
-// )
-// .then(numRowsAffected => {
-//   if (numRowsAffected > 0) {
-//     console.log("User's name updated successfully");
-//   } else {
-//     console.log("No rows were updated");
-//   }
-// })
-// .catch(error => console.log(error));
+db.user.update(
+  { email: "Test3@gmail" },
+  { where: { id: 3 } }
+)
+.then(numRowsAffected => {
+  if (numRowsAffected > 0) {
+    console.log("User's name updated successfully");
+  } else {
+    console.log("No rows were updated");
+  }
+})
+.catch(error => console.log(error));
 
   

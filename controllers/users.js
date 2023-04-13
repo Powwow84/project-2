@@ -59,7 +59,7 @@ router.post('/login', async (req, res) => {
             console.log('user not found')
             res.redirect('/users/login?message=' + failedLoginMessage)
         } else if (!bcrypt.compareSync(req.body.password, foundUser.password)){
-            console.log('incrroect password')
+            console.log('incorrect password')
             res.redirect('/users/login?message=' +failedLoginMessage)
         } else {
             const encryptedPk = cryptoJs.AES.encrypt(foundUser.id.toString(), process.env.ENC_KEY)
