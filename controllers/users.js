@@ -92,7 +92,7 @@ router.get('/logout', (req, res)=> {
 
 router.get('/profile', (req, res) =>{
     if(!res.locals.user) {
-    res.redirect('/users/login?message="Your are not authorized to view that page. Please authenticate to continue')
+    res.redirect('/users/login?message=Please login')
     } else {
         res.render('users/profiles.ejs')
     }
@@ -101,7 +101,11 @@ router.get('/profile', (req, res) =>{
 // route to land on the user edit page
 
 router.get('/edit/:id', (req,res) => {
-    res.render('users/edit.ejs')
+    if(!res.locals.user) {
+        res.redirect('/users/login?message=You need to logged in to use this feature')
+      } else {
+        res.render('users/edit.ejs')
+      }
 })
 
 // route to edit your users profile. updating here updates entries in the data table

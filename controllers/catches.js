@@ -19,17 +19,24 @@ router.get("/all", async(req,res) => {
 // route to land on the your catches page. the object bags is all logged catches and it returns catches based on a userId from the user_fish table
 
 router.get('/yours', async(req, res) => {
+    if(!res.locals.user) {
+      res.redirect('/users/login?message=You need to logged in to use this feature')
+    } else {
     try {
         const bags = await db.user_fish.findAll()
         res.render("catches/yours.ejs", {bags: bags});
     } catch(err) {
         console.log("Opps that didnt work")
     }
+  }
 })
 
 // route to land on the add catch page. This pulls the species of fish from the tile that was created and uses the id to find a specific fish and populates the id into a hidden part of the form
 
 router.get("/add", async (req, res) => {
+    if(!res.locals.user) {
+      res.redirect('/users/login?message=You need to logged in to use this feature')
+    } else {
     try {
         const speciesId = req.query.speciesId;
         const species = await db.fish.findByPk(speciesId);
@@ -37,6 +44,7 @@ router.get("/add", async (req, res) => {
     } catch (err) {
         console.log(err);
     }
+  }
 })
 
 // route creates a new catch  entry based on an object passed to the forms page from the fish page + information that the user inputs themselves
@@ -65,12 +73,16 @@ router.post('/add', async (req, res) => {
 // route to land on the specific catch page. Object info used on this page is passed from the your catches page. Specfically the post itself contians the info
 
   router.get('/edit/:id', async (req, res) => {
+    if(!res.locals.user) {
+      res.redirect('/users/login?message=You need to logged in to use this feature')
+    } else {
   try {
     const userPost = await db.user_fish.findByPk(req.params.id);
     res.render('catches/edit', { userPost: userPost });
   } catch (err) {
     console.log("oops that didn't work");
   }
+}
 });
 
 // route deletes a post
