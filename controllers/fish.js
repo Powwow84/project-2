@@ -5,6 +5,8 @@ const {Op} = require('sequelize');
 const uploadcareWidget = require("uploadcare-widget")
 
 
+// route to land on the fish page
+
 router.get('/', async(req, res) => {
   try{
     const fish = await db.fish.findAll()
@@ -16,7 +18,7 @@ router.get('/', async(req, res) => {
   }
 })
 
-
+// route to find a specific fish. It searches the fish table and finds relevant matches
 
 router.get('/search', async (req, res) => {
   try {

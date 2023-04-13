@@ -93,6 +93,7 @@ Use: Mark a location on the map where the fish was caught
 1. Add your crptoJs secret key to the .env file "ENC_KEY = 'YOUR secret key
 1. Signup for uploadcare and retrieve thier public api key from your account https://uploadcare.com/api/
 1. In the partials/header file add your public api key where it says UPLOADCARE_PUBLIC_KEY = "API KEY"
+1. In the terminal run "sequelize db:migrate" to create the data tables
 1. In the terminal run the seeder file by using this command 'node seeders/fishSeeder.js'
 
 ------------------------------------------------------------------------

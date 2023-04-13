@@ -45,6 +45,8 @@ const db = require('./models')
 //   });
 
 
+// this is my test JS where i use to do random task such as update my users tables
+
 db.user.update(
   { email: "Test3@gmail" },
   { where: { id: 3 } }

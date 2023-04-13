@@ -43,6 +43,8 @@ axios.request(options)
   })
 
 
+//this bottom parts all the fish entries and replaces all the entries that have a null value in the imgs section and replaces it with a default image 
+
   db.fish.findAll({
     where: { img: null }
   }).then(fishList => {

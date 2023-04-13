@@ -22,6 +22,9 @@ app.use((req, res, next) => {
     next()
 })
 
+
+// This came from the user auth lessons. This is what creates that global user object that we are referecing on the other plages
+
 app.use(async (req,res, next) => {
     try {
         if(req.cookies.userId) {

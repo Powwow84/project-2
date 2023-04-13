@@ -5,10 +5,14 @@ const bcrypt = require('bcrypt')
 const cryptoJs = require('crypto-js')
 const uploadcareWidget = require("uploadcare-widget")
 
+
+// route to land on the user create page
+
 router.get('/new', (req, res) => {
     res.render('users/new.ejs')
 })
 
+// route to create a new user. Checks to see if a user exist already but looking at the email. If not it creates a user with a hashed password, name, and image
 
 router.post('/', async (req, res) => {
     try {
@@ -39,12 +43,16 @@ router.post('/', async (req, res) => {
     
 })
 
+// route to land on the user login page
+
 router.get('/login', (req, res) => {
     console.log(req.query)
     res.render('users/login.ejs', {
         message: req.query.message ? req.query.message : null
     })
 })
+
+// route to login, it checks to see if the email and password is correct and sends an error if either are wrong
 
 router.post('/login', async (req, res) => {
     try {
@@ -72,12 +80,15 @@ router.post('/login', async (req, res) => {
     
 })
 
+// Route to log out
+
 router.get('/logout', (req, res)=> {
     console.log('logging user out')
     res.clearCookie('userId')
     res.redirect('/')
 })
 
+// route to land on the user profile page
 
 router.get('/profile', (req, res) =>{
     if(!res.locals.user) {
@@ -87,9 +98,13 @@ router.get('/profile', (req, res) =>{
     }
 })
 
+// route to land on the user edit page
+
 router.get('/edit/:id', (req,res) => {
     res.render('users/edit.ejs')
 })
+
+// route to edit your users profile. updating here updates entries in the data table
 
 router.put('/edit/:id', async (req,res) => {
     try{
@@ -106,6 +121,8 @@ router.put('/edit/:id', async (req,res) => {
         console.log("oops that didnt work")
     }
 });
+
+// this is the route to add to your bucketlit still wip. I'm not commenting out this code but i'll remove the display button on the website
 
 router.post("/profile/" , async (req,res) => {
     try{

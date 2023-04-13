@@ -16,7 +16,9 @@
             <div class="tileHeader">
                 <h3><%=species.name%></h3>
             </div>
-                <img src="<%=species.img%>"/>
+
+            <img src="<%=species.img%>"/>
+
             <div class="tileFooter">
                 <p><a href="<%=species.wiki%>" target="blank" class="wiki"><%=species.name %> Wiki</a></p>
                 <div>
@@ -25,11 +27,12 @@
                         <input hidden id="name" type="text" name="name" value="<%=species.name%>">
                         <input hidden id="img" type="text" name="img" value="<%=species.img%>">
                         <input hidden id="wiki" type="text" name="wiki" value="<%=species.wiki%>">
-                        <button id="bucketlistButton">Bucket List</button>
+                        
                     </form>
                 </div>
             </div>
         </div>
+
     <% } %>
 
 </div>
