@@ -44,12 +44,17 @@ const db = require('./models')
 //     console.log(err);
 //   });
 
-db.user.update({
-  user_name: "Pao"},
-  {
-    where: {id : 3}
-  }).then(_catch => {
-      console.log(_catch);
+db.fish.findAll({
+  where: { img: null }
+}).then(fishList => {
+  for (const fish of fishList) {
+    db.fish.update({
+      img: "https://i.imgur.com/An0tyUy.jpg"
+    }, {
+      where: { id: fish.id }
     }).catch(err => {
       console.log(err);
     });
+  }
+});
+  

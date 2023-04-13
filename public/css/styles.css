@@ -100,7 +100,9 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    z-index: 1;
 }
+
 
 
 /* Css for the various tiles used to display images and info on fish and images */
@@ -113,6 +115,7 @@ h1 {
     height: auto;
     margin: 3rem;
     border: solid .2rem #2B3990;
+    z-index: 1;
 }
 
 .tileHeader {
@@ -308,8 +311,17 @@ h1 {
     font-size: 1.1rem;
 }
 
+.landing {
+    display:flex;
+    background-color: #2B3990;   
+}
 
-
+.noFish {
+    color: red;
+    z-index: 0;
+    position:absolute;
+    top: 25rem;
+}
 
 
 @media screen and (max-width: 53rem) {

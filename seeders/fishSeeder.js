@@ -41,3 +41,18 @@ axios.request(options)
   .catch(function (error) {
     console.error(error)
   })
+
+
+  db.fish.findAll({
+    where: { img: null }
+  }).then(fishList => {
+    for (const fish of fishList) {
+      db.fish.update({
+        img: "https://i.imgur.com/An0tyUy.jpg"
+      }, {
+        where: { id: fish.id }
+      }).catch(err => {
+        console.log(err);
+      });
+    }
+  });
