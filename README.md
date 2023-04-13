@@ -32,7 +32,7 @@ api img
 
 Stretch
 
-Cloudinary ap - https://cloudinary.com/documentation/image_upload_api_reference
+Uploadcare - https://uploadcare.com/api/
 Uses: Upload images 
 
 Super Stretch
@@ -82,25 +82,39 @@ Use: Mark a location on the map where the fish was caught
 ![Imgur](https://i.imgur.com/D5Lgd2O.png)
 
 
+------------------------------------------------------------------------
+## Installation instructions
+
+1. Make a new directory
+1. Fork and clone this repository
+1. In the terminmal run the command 'npm i' to install all the dependencies
+1. Signup for rapid api and get the key for the fish species api https://rapidapi.com/myapos--FqlEzvrlv/api/fish-species/
+1. Create a .env file and add you fish api key as "fishy = 'YOUR API KEY' 
+1. Add your crptoJs secret key to the .env file "ENC_KEY = 'YOUR secret key
+1. Signup for uploadcare and retrieve thier public api key from your account https://uploadcare.com/api/
+1. In the partials/header file add your public api key where it says UPLOADCARE_PUBLIC_KEY = "API KEY"
+1. In the terminal run the seeder file by using this command 'node seeders/fishSeeder.js'
 
 ------------------------------------------------------------------------
 ## User Stories
+
+MVP
 
 * As a user I want to be able to search for a fish by name so that I can see what it looks like
 * As a user I want to be able to view a bunch of fish species incase i don’t know what fish I caught
 * As a user I want to be able to log my catch
 * As a user I want to be able to remove my catch
-* As a User I want to add a fish to my fishing bucketlist
 * As a user I want to be to be able to see another user's catch
 * As a user I want to be able to see where the fish was caught
-* As a user I want to be able to find a user and see all their catches
 * As a user I want to be able to find a fish and see the related catches of the fish
+
+Stretch
+
+* As a user I want to be able to find a user and see all their catches
+* As a User I want to add a fish to my fishing bucketlist
 
 
 ------------------------------------------------------------------------
-
-
-
 
 ## MVP
 
@@ -116,9 +130,9 @@ Use: Mark a location on the map where the fish was caught
 
 -------------------------------------------------------------------------
 ## Stretch Goals
+* upload images using the cloudinary api 
 * Create and populate a screen that displays other users catches
 * Create and display a screen that displays catches by fish id/name
-* upload images using the cloudinary api 
 * Add to a fishing bucket list
 * Remove from a fishing bucket list
  
