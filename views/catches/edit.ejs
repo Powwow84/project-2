@@ -9,8 +9,8 @@
         <label class="uploadSpacerTop">Select a image to upload</label>
         <input type="hidden" role="uploadcare-uploader" name="my_file"/>
         <input id="title" type="text" name="title" value="<%=userPost.title%>" class="uploadSpacer">
-        <input id="length" type="integer" name="length" value="<%=userPost.length%>">
-        <input id="weight" type="integer" name="weight" value="<%=userPost.weight%>">
+        <input id="length" type="number" name="length" value="<%=userPost.length%>">
+        <input id="weight" type="number" name="weight" value="<%=userPost.weight%>">
         <input id="location" type="text" name="location" value="<%=userPost.location%>">
         <textarea id="description" type="text" name="description" cols="30" rows="10" placeholder="Enter your fish tale here"></textarea>
         <button type="submit" class="entryButton">Submit</button>
