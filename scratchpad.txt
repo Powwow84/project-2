@@ -11,3 +11,14 @@ if you want  to add more columns for your p2:
 2. options:
     a. edit BOTH the user model and user migration to add columns 
     b. remove models/users.js migrations/<the user migration>.js and then rerun a new model create command
+
+
+
+userId
+fishId
+name
+img
+wiki
+
+
+sequelize model:create --name bucketlist --attributes userId:integer,fishId:integer,name:text,img:text,wiki:text

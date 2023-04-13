@@ -19,7 +19,10 @@
                 <img src="<%=species.img%>"/>
             <div class="tileFooter">
                 <p><a href="<%=species.wiki%>" target="blank" class="wiki"><%=species.name %> Wiki</a></p>
-                <button><a href="/catches/add?speciesId=<%=species.id%>" class="addButton">Add Catch</a></button>
+                <div>
+                    <button><a href="/catches/add?speciesId=<%=species.id%>" class="addButton">Add Catch</a></button>
+                    <button id="bucketlistButton"><a>Bucket List</a></button>
+                </div>
             </div>
         </div>
     <% } %>

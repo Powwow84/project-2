@@ -189,6 +189,13 @@ h1 {
     color:white
 }
 
+#bucketlistButton {
+    background-color: white;
+    color:#2B3990;
+    border: .1rem solid #2B3990;
+    padding: .15rem .3rem
+}
+
 .tag {
     font-weight: bold;
     margin-bottom: 0
@@ -263,6 +270,7 @@ h1 {
     width: 25rem;
     border: .2rem solid #2B3990;
     padding: 0 1rem;
+    border-radius: 5%;
 }
 
 .profile p {
