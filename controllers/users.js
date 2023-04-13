@@ -106,6 +106,23 @@ router.put('/edit/:id', async (req,res) => {
     }
 });
 
+router.post("/profile/" , async (req,res) => {
+    try{
+        const species = await db.bucketlist.create({
+            userId: user.id,
+            fishId: req.params.id,
+            name: req.body.id,
+            img: req.body.img,
+            wiki: req.body.wiki,
+        }, {
+            where: { id: req.params.id},
+        })
+        res.redirect('/users/profile', {species : species})
+    }catch(err) {
+        console.log("oops that didnt work")
+    }
+})
+
 
 
 module.exports = router

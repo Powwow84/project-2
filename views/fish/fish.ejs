@@ -21,7 +21,12 @@
                 <p><a href="<%=species.wiki%>" target="blank" class="wiki"><%=species.name %> Wiki</a></p>
                 <div>
                     <button><a href="/catches/add?speciesId=<%=species.id%>" class="addButton">Add Catch</a></button>
-                    <button id="bucketlistButton"><a>Bucket List</a></button>
+                    <form method="POST" action="/users/profile?speciesId=<%=species.id%>">
+                        <input hidden id="name" type="text" name="name" value="<%=species.name%>">
+                        <input hidden id="img" type="text" name="img" value="<%=species.img%>">
+                        <input hidden id="wiki" type="text" name="wiki" value="<%=species.wiki%>">
+                        <button id="bucketlistButton">Bucket List</button>
+                    </form>
                 </div>
             </div>
         </div>

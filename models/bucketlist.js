@@ -11,8 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.bucketlist.belongsTo(models.user),
-      models.bucketlist.belongsTo(models.fish)
+      models.bucketlist.belongsTo(models.user)
     }
   }
   bucketlist.init({
