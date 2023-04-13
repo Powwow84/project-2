@@ -4,6 +4,7 @@
 <div class="tileForm">
     <h1>Editing Catch Titled:</h1>
     <h2><%= userPost.title%></h2>
+    <img src="<%=userPost.img%>">
 
     <form method="POST" action="/catches/edit/<%=userPost.id%>?_method=PUT" class="entryForm">
         <label class="uploadSpacerTop">Select a image to upload</label>

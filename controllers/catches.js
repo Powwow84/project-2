@@ -90,16 +90,31 @@ router.put('/edit/:id', async (req, res) => {
   try {
     await db.user_fish.update({
       userId: req.body.userId,
-        fishId: req.body.fishId,
-        title: req.body.title,
-        length: req.body.length,
-        weight: req.body.weight,
-        img: req.body.my_file,
-        location: req.body.location,
-        description: req.body.description
+      fishId: req.body.fishId,
+      title: req.body.title,
+      length: req.body.length,
+      weight: req.body.weight,
+      location: req.body.location,
     }, { 
       where: { id: req.params.id } 
     });
+
+    if(req.body.my_file) {
+    await db.user_fish.update({
+      img: req.body.my_file
+    }, { 
+      where: { id: req.params.id } 
+    });
+    }
+
+    if(req.body.description) {
+      await db.user_fish.update({
+        description: req.body.description
+      }, { 
+        where: { id: req.params.id } 
+      });
+      }
+
     res.redirect('/catches/yours');
   } catch (err) {
     console.log("Oops, that didn't work");

@@ -223,6 +223,11 @@ h1 {
     
 }
 
+.tileForm img {
+    max-width: 15rem;
+    border-radius: 15%;
+}
+
 .entryForm {
     display: flex;
     flex-direction: column;

@@ -109,13 +109,30 @@ router.get('/edit/:id', (req,res) => {
 router.put('/edit/:id', async (req,res) => {
     try{
         await db.user.update({
-            user_name: req.body.user_name,
-            description: req.body.description,
-            user_img: req.body.my_file,
+            user_name: req.body.user_name
         },
         {
             where: {id: req.body.id}
         })
+
+        if(req.body.description) {
+        await db.user.update({
+            description: req.body.description
+        },
+        {
+            where: {id: req.body.id}
+        })
+        }
+
+        if(req.body.my_file) {
+        await db.user.update({
+            user_img: req.body.my_file
+        },
+        {
+            where: {id: req.body.id}
+        })
+        }
+
         res.redirect('/users/profile');
     }catch(err) {
         console.log("oops that didnt work")
