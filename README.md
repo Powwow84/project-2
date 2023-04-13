@@ -49,7 +49,7 @@ Use: Mark a location on the map where the fish was caught
 ------------------------------------------------------------------------
 ## RESTful Routing Chart
 
-![Imgur](https://i.imgur.com/SReL4B4.png)
+![Imgur](https://i.imgur.com/b4QLyHO.png)
 
 ------------------------------------------------------------------------
 ## Wireframe
