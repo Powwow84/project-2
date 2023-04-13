@@ -3,7 +3,12 @@ const router = express.Router()
 const db = require('../models')
 
 router.get("/all", async(req,res) => {
-  const bags = await db.user_fish.findAll()
+  const bags = await db.user_fish.findAll({
+    include: [
+      { model: db.user },
+      { model: db.fish }
+    ]
+  })
     res.render('catches/all', {
         bags:bags,
     })

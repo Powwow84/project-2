@@ -1,16 +1,17 @@
 <%- include('../partials/header.ejs' , {user:user}) %>
 
-<h1>you made it to the edit page</h1>
 
-<img src="<%=user.user_img%>" />
+<div class='tileForm'>
+    <h1>Edit your profile</h1>
+    <img src="<%=user.user_img%>" class="editImg"/>
 
-<form method="POST" action="/users/edit/<%=user.user_name%>?_method=PUT" >
-    <input hidden id="id" type="integer" name="id" value="<%=user.id%>">
-    <input type="hidden" role="uploadcare-uploader" name="my_file"/>
-    <input id="username" type="string" name="user_name" value="<%=user.user_name%>" />
-    <input hidden id="user_img" type="text" name="user_img" value="<%=user.user_img%>" />
-    <textarea id="description" type="text" name="description" cols="30" rows="10" placeholder="Description: Say Anything!"></textarea>
-    <button type="submit">Submit</button>
-</form>
-
+    <form method="POST" action="/users/edit/<%=user.user_name%>?_method=PUT" class="entryForm">
+        <input hidden id="id" type="integer" name="id" value="<%=user.id%>">
+        <input type="hidden" role="uploadcare-uploader" name="my_file"/>
+        <input id="username" type="string" name="user_name" value="<%=user.user_name%>" class="uploadSpacer"/>
+        <input hidden id="user_img" type="text" name="user_img" value="<%=user.user_img%>" />
+        <textarea id="description" type="text" name="description" cols="30" rows="10" placeholder="Description: Say Anything!"></textarea>
+        <button type="submit" class="entryButton">Submit</button>
+    </form>
+</div>
 <%- include('../partials/footer.ejs') %>

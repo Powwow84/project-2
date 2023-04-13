@@ -1,9 +1,8 @@
 <%- include("../partials/header.ejs", {user: user} ) %>
 
 <div class="searchBar">
-    <h1>Welcome to Finda, share your stories and pics!</h1>
+    <h1>Welcome to Finda, share your catches with the community!</h1>
 </div>
-
 
 <div class="backgrounds">
     <%for (const post of bags ) { %> 
@@ -11,7 +10,8 @@
             <div class="tileHeader">
                 <h3><%=post.title%></h3>
                 <div class="tileInfo">
-                    <p><span>Fisher:</span>  <%=post.userId%></p>
+                    <p><span>Fisher:</span>  <%=post.user.user_name%></p>
+                    <p><span>Species:</span>  <%=post.fish.name%></p>
                     <p><span>Area:</span>  <%=post.location%></p>   
                     <p><span>Catch Weight:</span>  <%=post.weight%> pounds</p>
                     <p><span>Catch Length:</span>  <%=post.length%> inches</p>

@@ -44,17 +44,18 @@ const db = require('./models')
 //     console.log(err);
 //   });
 
-db.fish.findAll({
-  where: { img: null }
-}).then(fishList => {
-  for (const fish of fishList) {
-    db.fish.update({
-      img: "https://i.imgur.com/An0tyUy.jpg"
-    }, {
-      where: { id: fish.id }
-    }).catch(err => {
-      console.log(err);
-    });
-  }
-});
+
+// db.user.update(
+//   { user_name: "Takashi Miké" },
+//   { where: { id: 6 } }
+// )
+// .then(numRowsAffected => {
+//   if (numRowsAffected > 0) {
+//     console.log("User's name updated successfully");
+//   } else {
+//     console.log("No rows were updated");
+//   }
+// })
+// .catch(error => console.log(error));
+
   

@@ -25,10 +25,12 @@ router.post('/', async (req, res) => {
         } else {
             const hashedPassed = bcrypt.hashSync(req.body.password, 12)
             newUser.password = hashedPassed
+            newUser.user_name = req.body.user_name
+            newUser.user_img = "https://i.imgur.com/An0tyUy.jpg"
             await newUser.save()
             const encryptedPk = cryptoJs.AES.encrypt(newUser.id.toString(), process.env.ENC_KEY)
             res.cookie('userId', encryptedPk.toString())
-            res.redirect('/')
+            res.redirect('/catches/all')
         }
 
     } catch(err) {

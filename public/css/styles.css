@@ -94,6 +94,7 @@ h1 {
     text-align: center;
 }
 
+
 /* css for the main content */
 
 .backgrounds {
@@ -204,6 +205,13 @@ h1 {
     margin-bottom: 0
 }
 
+.noFish {
+    color: red;
+    z-index: 0;
+    position:absolute;
+    top: 25rem;
+}
+
 /* This section styles the Add catch and Edit forms */
 
 .tileForm {
@@ -288,6 +296,11 @@ h1 {
     border-radius: 15%;
 }
 
+.editImg {
+    max-width: 15rem;
+    border-radius: 15%;
+}
+
 .logoutButton {
     margin-bottom: 1rem;
     background-color:#2B3990;
@@ -316,12 +329,9 @@ h1 {
     background-color: #2B3990;   
 }
 
-.noFish {
-    color: red;
-    z-index: 0;
-    position:absolute;
-    top: 25rem;
-}
+
+
+
 
 
 @media screen and (max-width: 53rem) {
