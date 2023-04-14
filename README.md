@@ -4,6 +4,7 @@
 
 Finda is a social media app for fisher-people. Built by fisher-people for fisher-people. Share, View, Post, Like content of awesome times out there on the water.
 
+https://finda.herokuapp.com/catches/all
 ------------------------------------------------------------------------
 ## Concept
 
