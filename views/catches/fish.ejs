@@ -1,7 +1,7 @@
-<%- include("../partials/header.ejs", {user: user} ) %>
+<%- include('../partials/header.ejs' , {user:user} ) %>
 
 <div class="searchBar">
-    <h1>Welcome to Finda, share your catches with the community!</h1>
+    <h1>Here's all of <%=bags[0].fish.name%> catches</h1>
 </div>
 
 <div class="backgrounds">
@@ -12,13 +12,8 @@
                 <div class="tileInfo">
                     <form action="/catches/users/<%= post.user.user_name %>" method="post">
                         <input type="hidden" name="id" value="<%= post.userId %>">
-                        <button type="submit">View <%= post.user.user_name %>'s catches</button>
+                        <button type="submit">View <%= post.user.user_name %>'s' catches</button>
                     </form>
-                    <form action="/catches/fish/<%=post.fish.name%>" method="post">
-                        <input type="hidden" name="id" value="<%= post.fishId %>">
-                        <button type="submit">All <%=post.fish.name%> catches</button>
-                    </form>
-                    <p><span>Species:</span>  <%=post.fish.name%></p>
                     <p><span>Area:</span>  <%=post.location%></p>   
                     <p><span>Catch Weight:</span>  <%=post.weight%> pounds</p>
                     <p><span>Catch Length:</span>  <%=post.length%> inches</p>
@@ -36,4 +31,4 @@
 
 </div>
 
-<%- include("../partials/footer.ejs") %>
+<%- include('../partials/footer.ejs') %>

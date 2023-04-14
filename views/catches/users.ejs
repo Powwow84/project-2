@@ -1,6 +1,5 @@
 <%- include('../partials/header.ejs' , {user:user} ) %>
 
-<%console.log(bags)%>
 <div class="searchBar">
     <h1>Here's all of <%=bags[0].user.user_name%> catches</h1>
 </div>
@@ -11,7 +10,10 @@
             <div class="tileHeader">
                 <h3><%=post.title%></h3>
                 <div class="tileInfo">
-                    <p><span>Species:</span>  <%=post.fish.name%></p>
+                    <form action="/catches/fish/<%=post.fish.name%>" method="post">
+                        <input type="hidden" name="id" value="<%= post.fishId %>">
+                        <button type="submit">All <%=post.fish.name%> catches</button>
+                    </form>
                     <p><span>Area:</span>  <%=post.location%></p>   
                     <p><span>Catch Weight:</span>  <%=post.weight%> pounds</p>
                     <p><span>Catch Length:</span>  <%=post.length%> inches</p>

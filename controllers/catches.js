@@ -133,7 +133,7 @@ router.put('/edit/:id', async (req, res) => {
   }
 });
 
-router.post('/show', async (req, res) => {
+router.post('/users/:id', async (req, res) => {
   try {
     const userId = req.body.id;
     const bags = await db.user_fish.findAll({
@@ -143,13 +143,29 @@ router.post('/show', async (req, res) => {
         { model: db.fish }
       ]
     });
-    res.render('catches/show', { bags });
+    res.render('catches/users', { bags });
   } catch (err) {
     console.log(err);
     res.redirect('/catches/all');
   }
 });
 
+router.post('/fish/:id', async (req, res) => {
+  try {
+    const fishId = req.body.id;
+    const bags = await db.user_fish.findAll({
+      where: { fishId },
+      include: [
+        { model: db.user },
+        { model: db.fish }
+      ]
+    });
+    res.render('catches/fish', { bags });
+  } catch (err) {
+    console.log(err);
+    res.redirect('/catches/all');
+  }
+});
 
 
 module.exports = router
