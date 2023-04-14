@@ -147,21 +147,20 @@ router.put('/edit/:id', async (req,res) => {
 
 router.post("/profile/" , async (req,res) => {
     try{
-        const species = await db.bucketlist.create({
+        const species = await db.bucketlist.findOrCreate({
             userId: user.id,
-            fishId: req.params.id,
+            fishId: req.body.fishId,
             name: req.body.id,
             img: req.body.img,
             wiki: req.body.wiki,
         }, {
-            where: { id: req.params.id},
+            where: { userId: req.body.fishId},
         })
         res.redirect('/users/profile', {species : species})
     }catch(err) {
         console.log("oops that didnt work")
     }
 })
-
 
 
 

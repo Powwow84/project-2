@@ -11,7 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      models.bucketlist.belongsTo(models.user)
+      models.bucketlist.belongsTo(models.user, {foreignKey: 'userId'})
+      models.bucketlist.belongsTo(models.fish, {foreignKey: 'fishId'})
     }
   }
   bucketlist.init({

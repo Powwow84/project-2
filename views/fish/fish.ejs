@@ -18,12 +18,14 @@
             </div>
 
             <div class="link">
-                <form method="POST" action="/users/profile?speciesId=<%=species.id%>">
-                    <input hidden id="name" type="text" name="name" value="<%=species.name%>">
-                    <input hidden id="img" type="text" name="img" value="<%=species.img%>">
-                    <input hidden id="wiki" type="text" name="wiki" value="<%=species.wiki%>">
-                    <button type="submit"><a href="/catches/add?speciesId=<%=species.id%>" >Add Catch</a></button>
-                </form>
+                <button type="submit"><a href="/catches/add?speciesId=<%=species.id%>" >Add Catch</a></button>
+                <form method="POST" action="/users/profile">
+                    <input hidden name="fishId" value="<%=species.id%>">
+                    <input hidden name="name" value="<%=species.name%>">
+                    <input hidden name="img" value="<%=species.img%>">
+                    <input hidden name="wiki" value="<%=species.wiki%>">
+                    <button type="submit">Add to Bucket List</button>
+                  </form>
                 <button><a href="<%=species.wiki%>" target="blank" ><%=species.name %> Wiki</a></button>
             </div>
             
