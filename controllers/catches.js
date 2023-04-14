@@ -133,4 +133,23 @@ router.put('/edit/:id', async (req, res) => {
   }
 });
 
+router.post('/show', async (req, res) => {
+  try {
+    const userId = req.body.id;
+    const bags = await db.user_fish.findAll({
+      where: { userId },
+      include: [
+        { model: db.user },
+        { model: db.fish }
+      ]
+    });
+    res.render('catches/show', { bags });
+  } catch (err) {
+    console.log(err);
+    res.redirect('/catches/all');
+  }
+});
+
+
+
 module.exports = router

@@ -1,7 +1,8 @@
-<%- include("../partials/header.ejs", {user: user} ) %>
+<%- include('../partials/header.ejs' , {user:user} ) %>
 
+<%console.log(bags)%>
 <div class="searchBar">
-    <h1>Welcome to Finda, share your catches with the community!</h1>
+    <h1>Here's all of <%=bags[0].user.user_name%> catches</h1>
 </div>
 
 <div class="backgrounds">
@@ -10,10 +11,6 @@
             <div class="tileHeader">
                 <h3><%=post.title%></h3>
                 <div class="tileInfo">
-                    <form action="/catches/show" method="post">
-                        <input type="hidden" name="id" value="<%= post.userId %>">
-                        <button type="submit">View <%= post.user.user_name %> catches</button>
-                    </form>
                     <p><span>Species:</span>  <%=post.fish.name%></p>
                     <p><span>Area:</span>  <%=post.location%></p>   
                     <p><span>Catch Weight:</span>  <%=post.weight%> pounds</p>
@@ -32,4 +29,4 @@
 
 </div>
 
-<%- include("../partials/footer.ejs") %>
+<%- include('../partials/footer.ejs') %>
