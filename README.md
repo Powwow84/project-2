@@ -147,6 +147,31 @@ Stretch
 * Uploading images into the cloud using cloudinary api
 * Learning how to implement the google maps api to add catch location
 
+### Roadblocks actually hit
+
+* Ran into an roodblock when trying to send information from multiple tables in one action. I could not figure out why I wasn't getting the primary key of the user_fish table. 
+- The solution came after talking to Instructor weston who pointed me the table relations. From there I went back to the docs then set the relationary data correctly which then gave me the data I needed. This one piece was reusable across multiple pages as I use the same data in multiple places
+
+* Ran into another roadblock when trying to set my project up to use import instead of require because I did not see that the uploadcare documentation had a require option . That set me back 2 hours.
+- I decided to step back and do more digging into the docs I just decided to try using the require method with the information from their import example and it worked🤷
+
+--------------------------------------------------------------------------
+
+## Post project reflection
+
+* I think I should have taken more time to understand my data tables and how they would relate to each other first before starting the project. the place where I spent the most time was trying to figure out how to get relational data from the tables.
+* Also I would not do my own custom css as that burned more time where I could have spent on functionality.
+- with that said though I think that taking a break from functionality to look work on style gave me a reset and helped me with my functionality when I got back to it
+
+-----------------------------------------------------------------------------
+
+## Future functionality
+* Add to bucketlist
+* Add catch from bucketlist
+* Comment on a post
+* Like a post
+
+
 
 
 
