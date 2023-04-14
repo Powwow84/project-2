@@ -111,8 +111,8 @@ h1 {
     display: flex;
     flex-direction: column;
     /* justify-content: space-between; */
-    max-width: 25rem;
-    min-width: 25rem;
+    width: 25rem;
+    /* min-width: 25rem; */
     height: auto;
     margin: 3rem;
     border: solid .2rem #2B3990;
@@ -243,9 +243,9 @@ h1 {
 .entryForm {
     display: flex;
     flex-direction: column;
-    width: 25rem;
+    width: 20rem;
     height: auto;
-    margin: 3rem;
+    margin: 1rem 3rem;
 }
 
 .entryForm input {
@@ -393,11 +393,7 @@ h1 {
 
 }
 
-@media screen and (max-width: 25rem) {
-
-    body {
-        width: 100%;
-    }
+@media screen and (max-width: 27rem) {
 
     .logoContainer {
         margin-left: 1rem;
@@ -408,12 +404,23 @@ h1 {
     }
 
     .tile {
-        border: none;
-        width: 20rem;
+        min-width: 20rem;
+    }
+
+    .tile img {
+        max-width: 20rem;
     }
 
     .landing img {
         display: none
+    }
+    
+    .searchBar input {
+        width: 17rem;
+    }
+
+    .profileBox {
+        width: 20rem;
     }
 
 }
