@@ -24,5 +24,28 @@
     <p>Fish in your bucket list</p>
 </div>
 
+<%console.log(bucket)%>
+<div class="backgrounds">
+
+    <%for (const species of bucket ) { %>
+        
+        <div class="tile">
+            <div class="tileHeader">
+                <h3><%=species.name%></h3>
+            </div>
+
+            <div class="link">
+                <button type="submit"><a href="/catches/add?speciesId=<%=species.id%>" >Add Catch</a></button>
+                <button><a href="<%=species.wiki%>" target="blank" ><%=species.name %> Wiki</a></button>
+            </div>
+            
+            <img src="<%=species.img%>"/>
+        </div>
+
+    <% } %>
+
+</div>
+
+
 <%- include("../partials/footer.ejs") %>
 

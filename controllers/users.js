@@ -143,24 +143,30 @@ router.put('/edit/:id', async (req,res) => {
     }
 });
 
-// this is the route to add to your bucketlit still wip. I'm not commenting out this code but i'll remove the display button on the website
+// this is the route to add to your bucketlist still wip. I'm not commenting out this code but i'll remove the display button on the website
 
-router.post("/profile/" , async (req,res) => {
-    try{
-        const species = await db.bucketlist.findOrCreate({
-            userId: user.id,
-            fishId: req.body.fishId,
-            name: req.body.id,
-            img: req.body.img,
-            wiki: req.body.wiki,
-        }, {
-            where: { userId: req.body.fishId},
-        })
-        res.redirect('/users/profile', {species : species})
-    }catch(err) {
-        console.log("oops that didnt work")
+router.post("/profile", async (req, res) => {
+    try {
+        await db.bucketlist.findOrCreate({
+            where: {
+              userId: req.body.userId,
+              fishId: req.body.fishId
+            },
+            defaults: {
+              name: req.body.name,
+              img: req.body.img,
+              wiki: req.body.wiki
+            }
+          });
+
+          const bucket = await db.bucketlist.findAll({
+            where: {userId: req.body.userId}
+          })
+      res.render("users/profiles", { bucket: bucket });
+    } catch (err) {
+      console.log("oops that didn't work");
     }
-})
+  });
 
 
 

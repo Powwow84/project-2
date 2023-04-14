@@ -117,6 +117,7 @@ h1 {
     margin: 3rem;
     border: solid .2rem #2B3990;
     z-index: 1;
+    
 }
 
 .tileHeader {
@@ -124,6 +125,7 @@ h1 {
     flex-direction: column;
     align-items: center;
     background-color: #2B3990;
+    text-align: center;
 }
 
 .tileFooter {
@@ -165,6 +167,7 @@ h1 {
 
 .link {
     margin: 1rem 0;
+
 }
 
 .tile img {
