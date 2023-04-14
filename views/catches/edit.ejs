@@ -1,22 +1,30 @@
 <%- include('../partials/header.ejs' , {user:user} ) %>
 
+<%if(user.id === userPost.userId) { %>
 
-<div class="tileForm">
-    <h1>Editing Catch Titled:</h1>
-    <h2><%= userPost.title%></h2>
-    <img src="<%=userPost.img%>">
+    <div class="tileForm">
+        <h1>Editing Catch Titled:</h1>
+        <h2><%= userPost.title%></h2>
+        <img src="<%=userPost.img%>">
 
-    <form method="POST" action="/catches/edit/<%=userPost.id%>?_method=PUT" class="entryForm">
-        <label class="uploadSpacerTop">Select a image to upload</label>
-        <input type="hidden" role="uploadcare-uploader" name="my_file"/>
-        <input id="title" type="text" name="title" value="<%=userPost.title%>" class="uploadSpacer">
-        <input id="length" type="number" name="length" value="<%=userPost.length%>">
-        <input id="weight" type="number" name="weight" value="<%=userPost.weight%>">
-        <input id="location" type="text" name="location" value="<%=userPost.location%>">
-        <textarea id="description" type="text" name="description" cols="30" rows="10" placeholder="Enter your fish tale here"></textarea>
-        <button type="submit" class="entryButton">Submit</button>
-    </form>
+        <form method="POST" action="/catches/edit/<%=userPost.id%>?_method=PUT" class="entryForm">
+            <label class="uploadSpacerTop">Select a image to upload</label>
+            <input type="hidden" role="uploadcare-uploader" name="my_file"/>
+            <input id="title" type="text" name="title" value="<%=userPost.title%>" class="uploadSpacer">
+            <input id="length" type="number" name="length" value="<%=userPost.length%>">
+            <input id="weight" type="number" name="weight" value="<%=userPost.weight%>">
+            <input id="location" type="text" name="location" value="<%=userPost.location%>">
+            <textarea id="description" type="text" name="description" cols="30" rows="10" placeholder="Enter your fish tale here"></textarea>
+            <button type="submit" class="entryButton">Submit</button>
+        </form>
 
-</div>
+    </div>
+
+<% } else { %>
+
+    <h1>You can not edit someone else's post</h1>
+
+   <% } %>
+
 
 <%- include('../partials/footer.ejs') %>
