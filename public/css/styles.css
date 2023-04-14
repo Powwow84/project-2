@@ -6,7 +6,7 @@ body {
 }
 
 a {
-    text-decoration: none;
+    color: #2B3990;
 }
 
 a:hover {
@@ -110,7 +110,7 @@ h1 {
 .tile {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     max-width: 25rem;
     min-width: 25rem;
     height: auto;
@@ -120,16 +120,18 @@ h1 {
 }
 
 .tileHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: #2B3990;
-    
 }
 
 .tileFooter {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: .5rem;
+    align-items: flex-start;
+    /* text-align: center; */
+    margin-left: 1rem;
 }
 
 .tileInfo {
@@ -161,9 +163,11 @@ h1 {
     background-color: white;
 }
 
+.link {
+    margin: 1rem 0;
+}
+
 .tile img {
-    /* margin: 1rem; */
-    /* border: .2rem solid #2B3990; */
     max-height: 20rem;
     max-width: 25rem;
 }
@@ -172,17 +176,25 @@ h1 {
 .tile p {
     justify-self: center;
     color:#2B3990;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 
 .tile button {
     margin-bottom: 1rem;
-    background-color:#2B3990;
-    color: white;
+    margin-left: 1rem;
+    font-size: 1rem;
+    background-color: white;
+    color: #2B3990;
+    margin:.3rem 1rem;
     border: none;
-    margin-top: .5rem;
-    padding: .2rem .4rem
+    text-decoration: underline;
+    padding: 0;
+    
+}
+
+.tile button:hover {
+    cursor: pointer;
 }
 
 .wiki {
@@ -341,6 +353,10 @@ h1 {
 .landing img {
     width: 20rem;
     margin: 2rem;
+}
+
+#catchInfo {
+    margin-bottom: 1rem;
 }
 
 

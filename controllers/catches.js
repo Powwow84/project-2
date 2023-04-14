@@ -133,6 +133,8 @@ router.put('/edit/:id', async (req, res) => {
   }
 });
 
+// router to show all catches from a specific user
+
 router.post('/users/:id', async (req, res) => {
   try {
     const userId = req.body.id;
@@ -149,6 +151,8 @@ router.post('/users/:id', async (req, res) => {
     res.redirect('/catches/all');
   }
 });
+
+// router to show all catches of a species of fish
 
 router.post('/fish/:id', async (req, res) => {
   try {

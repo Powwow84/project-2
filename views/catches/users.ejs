@@ -9,19 +9,23 @@
         <div class="tile">
             <div class="tileHeader">
                 <h3><%=post.title%></h3>
-                <div class="tileInfo">
+            </div>
+                <div class="link">
                     <form action="/catches/fish/<%=post.fish.name%>" method="post">
                         <input type="hidden" name="id" value="<%= post.fishId %>">
                         <button type="submit">All <%=post.fish.name%> catches</button>
                     </form>
-                    <p><span>Area:</span>  <%=post.location%></p>   
-                    <p><span>Catch Weight:</span>  <%=post.weight%> pounds</p>
-                    <p><span>Catch Length:</span>  <%=post.length%> inches</p>
                 </div>
                 <div class="tileImg">
                     <img src="<%=post.img%>"/>
                 </div>
-            </div>
+                <div class="tileInfo">
+                    <p id="catchInfo"><span>Catch Info:</span> </p>
+                    <p><span>Area:</span>  <%=post.location%></p>   
+                    <p><span>Catch Weight:</span>  <%=post.weight%> pounds</p>
+                    <p><span>Catch Length:</span>  <%=post.length%> inches</p>
+                </div>
+            
                 <div class="tileFooter">
                 <p class="tag">Story</p>
                 <p><%=post.description%></p>

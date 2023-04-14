@@ -9,19 +9,22 @@
         <div class="tile">
             <div class="tileHeader">
                 <h3><%=post.title%></h3>
+            </div>
+            <div class="link">
+                <form action="/catches/users/<%= post.user.user_name %>" method="post">
+                    <input type="hidden" name="id" value="<%= post.userId %>">
+                    <button type="submit">View <%= post.user.user_name %>'s' catches</button>
+                </form>
+            </div>
+            <div class="tileImg">
+                <img src="<%=post.img%>"/>
+            </div>
                 <div class="tileInfo">
-                    <form action="/catches/users/<%= post.user.user_name %>" method="post">
-                        <input type="hidden" name="id" value="<%= post.userId %>">
-                        <button type="submit">View <%= post.user.user_name %>'s' catches</button>
-                    </form>
+                    <p id="catchInfo"><span>Catch Info:</span> </p>
                     <p><span>Area:</span>  <%=post.location%></p>   
                     <p><span>Catch Weight:</span>  <%=post.weight%> pounds</p>
                     <p><span>Catch Length:</span>  <%=post.length%> inches</p>
                 </div>
-                <div class="tileImg">
-                    <img src="<%=post.img%>"/>
-                </div>
-            </div>
                 <div class="tileFooter">
                 <p class="tag">Story</p>
                 <p><%=post.description%></p>
