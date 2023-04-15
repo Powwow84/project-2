@@ -4,15 +4,12 @@
 
 <div class="searchBar">
     <h1>Welcome to your profile</h1>
-    <form method="GET" action="/fish/search">
-        <input id="search" name="fishSearch" type="text" placeholder="Search for a fish to add it to your bucket list">
-        <button type="submit">Search</button>
-    </form>
+    <a href="/users/bucketlists" class="bucketButton">See your bucketlist</a>
 </div>
 
 <div class="profile">
     <div class="profileBox">
-        <p><%=user.user_name%></p>
+        <h2><%=user.user_name%></h2>
         <img src="<%=user.user_img%>" />
         <p><%=user.description%></p>
         <a href="/users/edit/<%=user.user_name%>" class="wiki">Edit Profile</a>
@@ -20,32 +17,7 @@
     </div>
 </div>
 
-<div class="bucketlist">
-    <p>Fish in your bucket list</p>
-</div>
-
-<%console.log(bucket)%>
-<div class="backgrounds">
-
-    <%for (const species of bucket ) { %>
-        
-        <div class="tile">
-            <div class="tileHeader">
-                <h3><%=species.name%></h3>
-            </div>
-
-            <div class="link">
-                <button type="submit"><a href="/catches/add?speciesId=<%=species.id%>" >Add Catch</a></button>
-                <button><a href="<%=species.wiki%>" target="blank" ><%=species.name %> Wiki</a></button>
-            </div>
-            
-            <img src="<%=species.img%>"/>
-        </div>
-
-    <% } %>
-
-</div>
-
 
 <%- include("../partials/footer.ejs") %>
+
 

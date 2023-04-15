@@ -15,6 +15,13 @@
                         <input type="hidden" name="id" value="<%= post.fishId %>">
                         <button type="submit">All <%=post.fish.name%> catches</button>
                     </form>
+                    <form method="POST" action="/users/bucketlists">
+                        <input hidden name="fishId" value="<%=post.fishId%>">
+                        <input hidden name="name" value="<%=post.fish.name%>">
+                        <input hidden name="img" value="<%=post.fish.img%>">
+                        <input hidden name="wiki" value="<%=post.fish.wiki%>">
+                        <button type="submit">Add to your bucket list</button>
+                      </form>   
                 </div>
                 <div class="tileImg">
                     <img src="<%=post.img%>"/>

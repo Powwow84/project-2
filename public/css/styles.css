@@ -7,6 +7,7 @@ body {
 
 a {
     color: #2B3990;
+    text-decoration: underline;
 }
 
 a:hover {
@@ -15,6 +16,10 @@ a:hover {
 
 h1 {
     color: #2B3990;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 
@@ -76,6 +81,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-around;
     margin: 1rem;
 }
 
@@ -87,7 +93,7 @@ h1 {
 .searchBar input {
     height: 1.5rem;
     width: 21rem;
-    margin:0;
+    margin-top: 1rem;
 }
 
 .searchBar h1 {
@@ -167,7 +173,10 @@ h1 {
 
 .link {
     margin: 1rem 0;
-
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
 }
 
 .tile img {
@@ -201,7 +210,8 @@ h1 {
 }
 
 .wiki {
-    color:#2B3990
+    color:#2B3990;
+    border:none;
 }
 
 .addButton {
@@ -224,7 +234,7 @@ h1 {
     color: red;
     z-index: 0;
     position:absolute;
-    top: 20rem;
+    top: 19rem;
 }
 
 /* This section styles the Add catch and Edit forms */
@@ -302,6 +312,7 @@ h1 {
     border: .2rem solid #2B3990;
     padding: 0 1rem;
     border-radius: 5%;
+    color: #2B3990
 }
 
 .profile p {
@@ -360,6 +371,15 @@ h1 {
 
 #catchInfo {
     margin-bottom: 1rem;
+}
+
+.bucketButton {
+    border: none;
+    color: #2B3990;
+    text-decoration: underline;
+    background-color: white;
+    font-size: 1.2rem;
+    padding-top: 1rem;
 }
 
 
