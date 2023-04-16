@@ -54,7 +54,7 @@ router.post('/add', async (req, res) => {
       const catchData = req.body;
       console.log(catchData)
       await db.user_fish.create({
-        userId: res.locals.user.id,
+        userId: req.body.userId,
         fishId: req.body.fishId,
         title: req.body.title,
         length: req.body.length,
@@ -65,14 +65,13 @@ router.post('/add', async (req, res) => {
       })
 
     
-      const bucket = await db.bucketlist.destroy({
-        where: {
-          userId: res.locals.user.id,
-          fishId: req.body.fishId
-        }
-      })
+      // const bucket = await db.bucketlist.destroy({
+      //   where: {
+      //     userId: req.body.userId,
+      //     fishId: req.body.fishId
+      //   }
+      // })
 
-      console.log(bucket)
 
       const bags = await db.user_fish.findAll()
       res.render("catches/yours.ejs", {bags: bags});
