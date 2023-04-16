@@ -116,7 +116,7 @@ router.put('/edit/:id', async (req,res) => {
             user_name: req.body.user_name
         },
         {
-            where: {id: req.body.id}
+            where: {id: res.locals.user.id}
         })
 
         if(req.body.description) {
@@ -124,7 +124,7 @@ router.put('/edit/:id', async (req,res) => {
             description: req.body.description
         },
         {
-            where: {id: req.body.id}
+            where: {id: res.locals.user.id}
         })
         }
 
@@ -133,7 +133,7 @@ router.put('/edit/:id', async (req,res) => {
             user_img: req.body.my_file
         },
         {
-            where: {id: req.body.id}
+            where: {id: res.locals.user.id}
         })
         }
 
