@@ -65,12 +65,12 @@ router.post('/add', async (req, res) => {
       })
 
     
-      // const bucket = await db.bucketlist.destroy({
-      //   where: {
-      //     userId: req.body.userId,
-      //     fishId: req.body.fishId
-      //   }
-      // })
+      const bucket = await db.bucketlist.destroy({
+        where: {
+          userId: res.locals.user.id,
+          fishId: req.body.fishId
+        }
+      })
 
 
       const bags = await db.user_fish.findAll()
