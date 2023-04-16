@@ -146,6 +146,9 @@ router.put('/edit/:id', async (req,res) => {
 // this is the route to add to your bucketlist still wip. I'm not commenting out this code but i'll remove the display button on the website
 
 router.get('/bucketlists/', async(req, res) => {
+    if(!res.locals.user) {
+        res.redirect('/users/login?message=Please login')
+    }else{
     try{
         const bucket = await db.bucketlist.findAll({
             where: {userId: res.locals.user.id}
@@ -154,6 +157,7 @@ router.get('/bucketlists/', async(req, res) => {
     }catch(err){
         console.log('oops that didnt work')
     }
+}
 })
 
 router.post("/bucketlists", async (req, res) => {

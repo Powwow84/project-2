@@ -23,7 +23,7 @@ router.get('/yours', async(req, res) => {
       res.redirect('/users/login?message=You need to logged in to use this feature')
     } else {
     try {
-        const bags = await db.user_fish.findAll()
+        const bags = await db.user_fish.findAll({ where: {userId : res.locals.user.id}})
         res.render("catches/yours.ejs", {bags: bags});
     } catch(err) {
         console.log("Opps that didnt work")
@@ -73,7 +73,7 @@ router.post('/add', async (req, res) => {
       })
 
 
-      const bags = await db.user_fish.findAll()
+      const bags = await db.user_fish.findAll({ where: {userId : res.locals.user.id}})
       res.render("catches/yours.ejs", {bags: bags});
 
     } catch (err) {

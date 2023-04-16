@@ -17,6 +17,7 @@
                 <h3><%=species.name%></h3>
             </div>
             <div class="link">
+                <% if(user) { %>
                 <button type="submit"><a href="/catches/add?speciesId=<%=species.id%>" >Add Catch</a></button>
                 <form method="POST" action="/users/bucketlists">
                     <input hidden name="fishId" value="<%=species.id%>">
@@ -25,6 +26,7 @@
                     <input hidden name="wiki" value="<%=species.wiki%>">
                     <button type="submit">Add to your bucket list</button>
                   </form>
+                  <% } %>   
                 <button><a href="<%=species.wiki%>" target="blank" ><%=species.name %> Wiki</a></button>
             </div>
             <img src="<%=species.img%>"/>

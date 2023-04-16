@@ -12,7 +12,6 @@
 <div class="backgrounds">
 
     <%for (const post of bags ) { %>
-      <% if(post.userId === user.id) { %>
         <div class="tile">
             <div class="tileHeader">
                 <h3><%=post.title%></h3>
@@ -38,7 +37,6 @@
                 <p><%=post.description%></p>
             </div>
         </div>
-        <%} %>
     <% } %>
 
 </div>
