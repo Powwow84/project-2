@@ -54,7 +54,7 @@ router.post('/add', async (req, res) => {
       const catchData = req.body;
       console.log(catchData)
       await db.user_fish.create({
-        userId: req.body.userId,
+        userId: res.locals.user.id,
         fishId: req.body.fishId,
         title: req.body.title,
         length: req.body.length,

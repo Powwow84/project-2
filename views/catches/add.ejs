@@ -7,7 +7,7 @@
     <form method="POST" action="/catches/add" class="entryForm">
         <label class="uploadSpacerTop">Select a image to upload</label>
         <input type="hidden" role="uploadcare-uploader" name="my_file"/>
-        <input hidden id="userId" type="integer" name="userId" value="<%=user.id%>">
+        
         <input hidden id="fishId" type="integer" name="fishId" value="<%=species.id%>">
         <input id="title" type="text" name="title" placeholder="Title of you post" class="uploadSpacer">
         <input id="length" type="number" name="length" placeholder="Legnth in inches">
